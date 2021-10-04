@@ -13,3 +13,10 @@ main{
     width: 50px;
     border: 1px solid white;
 }
+
+.disco {
+    height: 50px;
+    width: 50px;
+    background-color: white;
+    border-radius: 25px;
+}
