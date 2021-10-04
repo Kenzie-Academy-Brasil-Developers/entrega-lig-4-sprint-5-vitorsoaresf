@@ -16,8 +16,17 @@
 
 
 // escrito por Erivan
-
-
+let isPlayer1 = true
+function getPlayer(){
+    if(isPlayer1){
+        return "Player1"
+    }else{
+        return "Player2"
+    }
+}
+function mudaPlayer(){
+    isPlayer1=!isPlayer1
+}
 
 
 
