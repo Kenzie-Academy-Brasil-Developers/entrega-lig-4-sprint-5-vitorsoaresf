@@ -4,14 +4,9 @@ const criarColuna = (id, id1) => {
 
     const divColuna = document.createElement('div');
 
-    
-
     mainTag.appendChild(divColuna);
 
-    divColuna.classList.add('coluna');
-
-   
-    
+    divColuna.classList.add('coluna');   
 
     divColuna.id = 'coluna' + id;
 
@@ -25,6 +20,7 @@ const criarColuna = (id, id1) => {
         divLinha.id = 'bloco' + id1[a];
     }
 }
+
 for (let i = 0; i <= 6; i++){
     let l = []
     let newI = ''
