@@ -1,0 +1,15 @@
+main{
+    display: flex;
+
+}
+.coluna{
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+
+}
+.linha{
+    height: 50px;
+    width: 50px;
+    border: 1px solid white;
+}
