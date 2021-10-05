@@ -36,16 +36,19 @@ const addDisco = (event) => {
             const disco = document.createElement('div');
             if(isPlayer1){
                 disco.classList.add('discoPlayer1');
+                disco.id = 'discoPlayer1';
                 objDiscos[`disco${idCol[6]}${objCol[idCol]}`]="Player1"
             }else{
                 disco.classList.add('discoPlayer2');
+                disco.id = 'discoPlayer2';
                 objDiscos[`disco${idCol[6]}${objCol[idCol]}`]="Player2"
             }
-            validaDiagonal(Number(idCol[6]),objCol[idCol])
-            // console.log(objDiscos)
-            mudaPlayer();
+            
             celula.appendChild(disco);
             celula = col.children[col.children.length - objCol[idCol] - 1];
+            validaDiagonal(Number(idCol[6]),objCol[idCol])
+            validaVertical(Number(idCol[6]), objCol[idCol]);
+            mudaPlayer();
         }
     }
 }
@@ -104,8 +107,14 @@ const novoJogo = () => {
 
 
 //Funções Daniel
-
-
+const validaVertical = (x, y) => {
+    if (objDiscos[`disco${x}${y}`] === getPlayer() && objDiscos[`disco${x}${y-1}`] === getPlayer() && 
+        objDiscos[`disco${x}${y-2}`] === getPlayer() && objDiscos[`disco${x}${y-3}`] === getPlayer()) {
+            console.log('ganhou lek')
+            return true
+        }
+    return false
+}
 
 //Funções Erivan
 function validaDiagonal(x,y){
