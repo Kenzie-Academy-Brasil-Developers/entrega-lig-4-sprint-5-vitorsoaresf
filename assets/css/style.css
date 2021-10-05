@@ -21,7 +21,7 @@ main{
 }
 
 .coluna:hover{
-    box-shadow: inset 0 0 1em gold;
+    background-color: #2fa1e2;
 }
 
 .linha{
@@ -40,6 +40,8 @@ main{
     border-radius: 100%;
     border: double #e8000036;
     box-shadow: 0px 0px 0px 3px #ffca00;
+    animation-name: disco;
+    animation-duration: 1s;
 }
 
 .discoPlayer2{
@@ -49,4 +51,19 @@ main{
     border-radius: 100%;
     border: double #ffffff36;
     box-shadow: 0px 0px 0px 3px #a42c1e;
+    animation-name: disco;
+    animation-duration: 1s;
+}
+
+@keyframes disco {
+    from{
+        width: 0%;
+        box-shadow: 0 0 6px 10px rgb(180, 180, 180);
+        margin-top: -100vh;
+    }
+    to{
+        width: 80%;
+        box-shadow: 0 0 6px 10px rgb(255, 255, 255);
+        margin-top: 0px;
+    }
 }
