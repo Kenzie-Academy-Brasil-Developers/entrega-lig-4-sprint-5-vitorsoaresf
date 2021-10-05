@@ -36,15 +36,18 @@ const addDisco = (event) => {
             const disco = document.createElement('div');
             if(isPlayer1){
                 disco.classList.add('discoPlayer1');
+                disco.id = 'discoPlayer1';
                 objDiscos[`disco${idCol[6]}${objCol[idCol]}`]="Player1"
             }else{
                 disco.classList.add('discoPlayer2');
+                disco.id = 'discoPlayer2';
                 objDiscos[`disco${idCol[6]}${objCol[idCol]}`]="Player2"
             }
             console.log(objDiscos)
             mudaPlayer();
             celula.appendChild(disco);
             celula = col.children[col.children.length - objCol[idCol] - 1];
+            validaHorizontal(celula);
         }
     }
 }
@@ -103,7 +106,34 @@ const novoJogo = () => {
 
 
 //Funções Daniel
-
+const validaHorizontal = (celula) => {
+    let player1 = 0;
+    let player2 = 0;
+    for(let i = 0; i <= 5; i++) {
+        player1 = 0;
+        player2 = 0;
+        for(let j = 0; j < 6; j++){
+            let position = celula;
+         if (position.lastChild === null) {
+            player1 = 0;
+            player2 = 0;
+         } else if (position.lastChild !== null) { 
+                if (position.lastChild.id == 'discoPlayer1') {
+                    player1++;
+                    player2 = 0;
+                } else if(position.lastChild.id == 'discoPlayer2') {
+                    player2++;
+                    player1 = 0;
+                }
+                if (player1 === 4){
+                    console.log('1ganhou')
+                } else if (player2 === 4){
+                    console.log('2ganhou')
+                }
+            }
+        }
+    }  
+}
 
 
 //Funções Erivan
