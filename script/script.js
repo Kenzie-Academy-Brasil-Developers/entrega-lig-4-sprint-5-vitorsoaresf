@@ -94,7 +94,7 @@ const novoJogo = () => {
 //Funções André
 
 
-//Funções Daniel
+//Funções Daniel heheheh
 
 
 //Funções Erivan
