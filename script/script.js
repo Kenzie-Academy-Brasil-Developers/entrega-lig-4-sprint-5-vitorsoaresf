@@ -36,9 +36,12 @@ const addDisco = (event) => {
             const disco = document.createElement('div');
             if(isPlayer1){
                 disco.classList.add('discoPlayer1');
+                objDiscos[`disco${idCol[6]}${objCol[idCol]}`]="Player1"
             }else{
                 disco.classList.add('discoPlayer2');
+                objDiscos[`disco${idCol[6]}${objCol[idCol]}`]="Player2"
             }
+            console.log(objDiscos)
             mudaPlayer();
             celula.appendChild(disco);
             celula = col.children[col.children.length - objCol[idCol] - 1];
