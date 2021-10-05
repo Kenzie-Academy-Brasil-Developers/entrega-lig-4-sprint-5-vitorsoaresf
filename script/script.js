@@ -6,7 +6,7 @@ const criarColuna = (id, id1) => {
 
     mainTag.appendChild(divColuna);
 
-    divColuna.classList.add('coluna');   
+    divColuna.classList.add('coluna');
 
     divColuna.id = 'coluna' + id;
 
@@ -21,16 +21,16 @@ const criarColuna = (id, id1) => {
     }
 }
 
-for (let i = 0; i <= 6; i++){
+for (let i = 0; i <= 6; i++) {
     let l = []
     let newI = ''
     let newJ = ''
-    for (let j = 0; j <= 5; j++){
+    for (let j = 0; j <= 5; j++) {
         newI = i.toString();
         newJ = j.toString();
         l.push(newI + newJ)
     }
-    criarColuna(i,l)
+    criarColuna(i, l)
 }
 
 
@@ -49,15 +49,15 @@ for (let i = 0; i <= 6; i++){
 
 // escrito por Erivan
 let isPlayer1 = true
-function getPlayer(){
-    if(isPlayer1){
+function getPlayer() {
+    if (isPlayer1) {
         return "Player1"
-    }else{
+    } else {
         return "Player2"
     }
 }
-function mudaPlayer(){
-    isPlayer1=!isPlayer1
+function mudaPlayer() {
+    isPlayer1 = !isPlayer1
 }
 
 
@@ -223,19 +223,19 @@ let objCol = {
     coluna6: 0
 }
 
-function addDisco (event) {
+function addDisco(event) {
     let col = event.target.closest('.coluna');
     const idCol = col.id;
     if (objCol[idCol] === 6) {
         console.log('NEIN!!!')
     } else {
-        let celula = col.children[col.children.length-objCol[idCol]-1];
+        let celula = col.children[col.children.length - objCol[idCol] - 1];
         if (celula.lastChild === null) {
             objCol[idCol]++;
             const disco = document.createElement('div');
             disco.classList.add('disco');
             celula.appendChild(disco);
-            celula = col.children[col.children.length-objCol[idCol]-1];
+            celula = col.children[col.children.length - objCol[idCol] - 1];
         }
     }
 }
