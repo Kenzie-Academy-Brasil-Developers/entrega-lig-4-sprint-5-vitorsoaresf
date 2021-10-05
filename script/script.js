@@ -37,6 +37,7 @@ const addDisco = (event) => {
             }else{
                 disco.classList.add('discoPlayer2');
             }
+            mudaPlayer();
             celula.appendChild(disco);
             celula = col.children[col.children.length - objCol[idCol] - 1];
         }
@@ -90,6 +91,20 @@ const novoJogo = () => {
         criarColuna(i, l)
     }
 }
+
+//Funções André
+
+
+
+//Funções Daniel
+
+
+
+//Funções Erivan
+
+
+
+//Funções Vitor
 
 
 
