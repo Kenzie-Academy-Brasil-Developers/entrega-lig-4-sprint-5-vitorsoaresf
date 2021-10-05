@@ -233,7 +233,7 @@ function addDisco(event) {
         if (celula.lastChild === null) {
             objCol[idCol]++;
             const disco = document.createElement('div');
-            disco.classList.add('disco');
+            disco.classList.add('discoPlayer2');
             celula.appendChild(disco);
             celula = col.children[col.children.length - objCol[idCol] - 1];
         }
