@@ -3,7 +3,10 @@ main{
     align-items: flex-end;
     background-color: brown;
     height: 100vh;
-
+    background-image: url(../img/background.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .coluna{
     display: flex;
@@ -36,7 +39,7 @@ main{
     background-color: #ffca00;
     border-radius: 100%;
     border: double #e8000036;
-    box-shadow: 0px 0px 0px 1px #ffca00;
+    box-shadow: 0px 0px 0px 3px #ffca00;
 }
 
 .discoPlayer2{
@@ -45,5 +48,5 @@ main{
     background-color: #A42C1E;
     border-radius: 100%;
     border: double #ffffff36;
-    box-shadow: 0px 0px 0px 1px #a42c1e;
+    box-shadow: 0px 0px 0px 3px #a42c1e;
 }
