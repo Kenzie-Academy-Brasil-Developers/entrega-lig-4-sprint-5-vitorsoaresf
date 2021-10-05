@@ -13,6 +13,8 @@ let objCol = {
     coluna6: 0
 }
 
+objDiscos = {}
+
 // FUNÇÕES
 
 const aplicacao = () => {
@@ -93,6 +95,7 @@ const novoJogo = () => {
 }
 
 //Funções André
+
 
 
 
