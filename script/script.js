@@ -225,6 +225,9 @@ let objCol = {
 
 function addDisco(event) {
     let col = event.target.closest('.coluna');
+    if (col === null || col === undefined) {
+        return
+    }
     const idCol = col.id;
     if (objCol[idCol] === 6) {
         console.log('NEIN!!!')
