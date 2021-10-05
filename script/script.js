@@ -42,10 +42,11 @@ const addDisco = (event) => {
                 disco.classList.add('discoPlayer2');
                 disco.id = 'discoPlayer2';
                 objDiscos[`disco${idCol[6]}${objCol[idCol]}`]="Player2"
-            }
-            
+            } 
+
             celula.appendChild(disco);
             celula = col.children[col.children.length - objCol[idCol] - 1];
+            validaHorizontal(`disco${idCol[6]}${objCol[idCol]}`);
             validaDiagonal(Number(idCol[6]),objCol[idCol])
             validaVertical(Number(idCol[6]), objCol[idCol]);
             mudaPlayer();
@@ -103,7 +104,48 @@ const novoJogo = () => {
 
 //Funções André
 
-
+const validaHorizontal = (posicao) => {
+    let pos = posicao.split('')
+    let jogadorDaVez = objDiscos[posicao]       
+    let alterado = parseInt(pos[5])
+    
+    if (objDiscos['disco' + (alterado - 1) + pos[6]] == jogadorDaVez){
+        if (objDiscos['disco' + (alterado - 2) + pos[6]] == jogadorDaVez){
+            if (objDiscos['disco' + (alterado - 3) + pos[6]] == jogadorDaVez){                    
+                console.log(jogadorDaVez)
+                return true;
+            }
+            else if (objDiscos['disco' + (alterado + 1) + pos[6]] == jogadorDaVez){
+                console.log(jogadorDaVez)
+                return true;
+            }
+        }
+        else if (objDiscos['disco' + (alterado + 1) + pos[6]] == jogadorDaVez) {
+            if (objDiscos['disco' + (alterado + 2) + pos[6]] == jogadorDaVez){
+                console.log(jogadorDaVez)
+                return true;
+            }
+        } 
+    }
+    else if (objDiscos['disco' + (alterado + 1) + pos[6]] == jogadorDaVez){
+        if (objDiscos['disco' + (alterado + 2) + pos[6]] == jogadorDaVez){
+            if (objDiscos['disco' + (alterado + 3) + pos[6]] == jogadorDaVez){                    
+                console.log(jogadorDaVez)
+                return true;
+            }
+            else if (objDiscos['disco' + (alterado - 1) + pos[6]] == jogadorDaVez){
+                console.log(jogadorDaVez)
+                return true;
+            }
+        }
+        else if (objDiscos['disco' + (alterado - 1) + pos[6]] == jogadorDaVez) {
+            if (objDiscos['disco' + (alterado - 2) + pos[6]] == jogadorDaVez){
+                console.log(jogadorDaVez)
+                return true;
+            }
+        } 
+    }    
+}
 
 
 //Funções Daniel
@@ -191,6 +233,7 @@ function diag4(x,y){
 function getDisco (x,y){
     return objDiscos[`disco${x}${y}`]
 }
+
 
 //Funções Vitor
 
