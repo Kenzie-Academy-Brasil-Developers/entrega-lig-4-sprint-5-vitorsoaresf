@@ -41,7 +41,8 @@ const addDisco = (event) => {
                 disco.classList.add('discoPlayer2');
                 objDiscos[`disco${idCol[6]}${objCol[idCol]}`]="Player2"
             }
-            console.log(objDiscos)
+            validaDiagonal(Number(idCol[6]),objCol[idCol])
+            // console.log(objDiscos)
             mudaPlayer();
             celula.appendChild(disco);
             celula = col.children[col.children.length - objCol[idCol] - 1];
@@ -107,8 +108,80 @@ const novoJogo = () => {
 
 
 //Funções Erivan
-
-
+function validaDiagonal(x,y){
+    if(diag1(x,y)+diag3(x,y)>2){
+        console.log("GG IZI")
+        return true
+    }
+    if(diag2(x,y)+diag4(x,y)>2){
+        console.log("GG IZI")
+        return true
+    }
+    return false
+}
+function diag1(x, y) {
+    if(getDisco(x+1,y+1)===getPlayer()){
+        if(getDisco(x+2,y+2)===getPlayer()){
+            if(getDisco(x+3,y+3)===getPlayer()){
+                return 3
+            }else{
+                return 2
+            }
+        }else{
+            return 1
+        }
+    }else{
+        return 0
+    }
+}
+function diag2(x,y){
+    if(getDisco(x+1,y-1)===getPlayer()){
+        if(getDisco(x+2,y-2)===getPlayer()){
+            if(getDisco(x+3,y-3)===getPlayer()){
+                return 3
+            }else{
+                return 2
+            }
+        }else{
+            return 1
+        }
+    }else{
+        return 0
+    }
+}
+function diag3(x,y){
+    if(getDisco(x-1,y-1)===getPlayer()){
+        if(getDisco(x-2,y-2)===getPlayer()){
+            if(getDisco(x-3,y-3)===getPlayer()){
+                return 3
+            }else{
+                return 2
+            }
+        }else{
+            return 1
+        }
+    }else{
+        return 0
+    }
+}
+function diag4(x,y){
+    if(getDisco(x-1,y+1)===getPlayer()){
+        if(getDisco(x-2,y+2)===getPlayer()){
+            if(getDisco(x-3,y+3)===getPlayer()){
+                return 3
+            }else{
+                return 2
+            }
+        }else{
+            return 1
+        }
+    }else{
+        return 0
+    }
+}
+function getDisco (x,y){
+    return objDiscos[`disco${x}${y}`]
+}
 
 //Funções Vitor
 
