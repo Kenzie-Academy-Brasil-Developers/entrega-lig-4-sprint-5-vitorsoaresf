@@ -67,3 +67,44 @@ main{
         margin-top: 0px;
     }
 }
+
+.naoinsere{
+    background-image: url(../img/2.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation-name: happy;
+    animation-duration: 2s;
+}
+.insere{
+    background-image: url(../img/1.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation-name: happy;
+    animation-duration: 2s;
+}
+
+@keyframes happy {
+    0%{
+        margin-top: -60px;
+    }
+    50%{
+        margin-top: 0px;
+    }
+    100%{
+        margin-top: -60px;
+    }
+}

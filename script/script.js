@@ -28,8 +28,9 @@ const addDisco = (event) => {
     }
     const idCol = col.id;
     if (objCol[idCol] === 6) {
-        console.log('NEIN!!!')
+        negaMovimento();
     } else {
+        permiteMovimento();
         let celula = col.children[col.children.length - objCol[idCol] - 1];
         if (celula.lastChild === null) {
             objCol[idCol]++;
@@ -88,6 +89,13 @@ const mudaPlayer = () => {
     isPlayer1 = !isPlayer1
 }
 
+const negaMovimento = () =>{
+    const divNaoInsere = document.createElement('div');
+    divNaoInsere.classList.add('naoinsere');
+    main.insertBefore(divNaoInsere,main.firstChild);
+    setTimeout(()=> app.removeChild(divNaoInsere),2000);
+}
+
 const novoJogo = () => {
     for (let i = 0; i <= 6; i++) {
         let l = []
@@ -100,6 +108,13 @@ const novoJogo = () => {
         }
         criarColuna(i, l)
     }
+}
+
+const permiteMovimento = () =>{
+    const divNaoInsere = document.createElement('div');
+    divNaoInsere.classList.add('insere');
+    main.insertBefore(divNaoInsere,main.firstChild);
+    setTimeout(()=> app.removeChild(divNaoInsere),2000);
 }
 
 //Funções André
