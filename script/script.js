@@ -6,6 +6,8 @@ box_tabuleiro.classList.add('box_tabuleiro');
 main.appendChild(box_tabuleiro);
 const botaoInicio = document.getElementById('botaoIniciar');
 const inicio = document.getElementById('paiInicio');
+const vitoriaSonic = document.getElementById('sonicGanha')
+const vitoriaMario = document.getElementById('marioGanha')
 
 let isPlayer1 = true
 let objCol = {
@@ -289,7 +291,6 @@ const validaHorizontal = (posicao) => {
 const validaVertical = (x, y) => {
     if (objDiscos[`disco${x}${y}`] === getPlayer() && objDiscos[`disco${x}${y - 1}`] === getPlayer() &&
         objDiscos[`disco${x}${y - 2}`] === getPlayer() && objDiscos[`disco${x}${y - 3}`] === getPlayer()) {
-            console.log('ganhou')
         return true
     }
     return false
@@ -310,8 +311,20 @@ const validaDiagonal = (x, y) => {
 const iniciar = () => {
     setTimeout(function(){ 
     inicio.style.display = 'none';
-    main.style.display = 'none' 
+    main.style.display = 'flex' 
     }, 3000);
+}
+
+function validaVitoria() {
+
+    if (getPlayer() == 'Player1') {
+        vitoriaSonic.style.display = 'block'
+        main.style.display = 'none' 
+    }
+    if (getPlayer() == 'Player2') {
+        vitoriaMario.style.display = 'block'
+        main.style.display = 'none' 
+    }
 }
 
 
