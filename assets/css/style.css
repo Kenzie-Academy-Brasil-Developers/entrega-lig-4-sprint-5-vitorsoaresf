@@ -15,23 +15,25 @@ main{
     top: 0;
 }
 #buttonBar>div{
+    margin: 3px;
     border: red solid 4px;
     font-size: 25px;
     border-radius: 50%;
     color: red;
     background-color: #289DE3;
     text-align: center;
-    padding: 0.2em;
+    padding-left: 0.25em;
+    padding-right: 0.25em;
+    padding-top: 0.5em;
     height: 1.5em;
     width: 1.5em;
-    display: table-cell;
-    vertical-align: middle;
+    display: inline-block;
     cursor: pointer;
 }
 #buttonBar>div:hover{
-    background-color: #1d71a1
-    color: #d00;
-    border-color: #d00;
+    background-color: #135074 ;
+    color: #a00;
+    border-color: #a00;
 }
 
 .box_tabuleiro{
