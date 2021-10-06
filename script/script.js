@@ -72,8 +72,6 @@ const addDisco = (event) => {
     playerNaoEstaJogando = setInterval(() =>{
         desselecionaJogador();
         mudaPlayer();
-        console.log(getPlayer())
-
     }, 3000);
 
 }
@@ -103,14 +101,12 @@ const desselecionaJogador = () =>{
     const p2 = document.getElementById('p2');
 
     if(isPlayer1){
-        console.log(getPlayer())
         p1.classList.toggle('player_desselecionado');
         if(desseleciona){
             p2.classList.toggle('player_desselecionado');
             bool = false
         }
     }else{
-        console.log(getPlayer())
         p2.classList.toggle('player_desselecionado');
         p1.classList.toggle('player_desselecionado');
         desseleciona = true;
@@ -255,17 +251,17 @@ const validaHorizontal = (posicao) => {
     if (objDiscos['disco' + (alterado - 1) + pos[6]] == jogadorDaVez) {
         if (objDiscos['disco' + (alterado - 2) + pos[6]] == jogadorDaVez) {
             if (objDiscos['disco' + (alterado - 3) + pos[6]] == jogadorDaVez) {
-                console.log(jogadorDaVez)
+                console.log('ganhou')
                 return true;
             }
             else if (objDiscos['disco' + (alterado + 1) + pos[6]] == jogadorDaVez) {
-                console.log(jogadorDaVez)
+                console.log('ganhou')
                 return true;
             }
         }
         else if (objDiscos['disco' + (alterado + 1) + pos[6]] == jogadorDaVez) {
             if (objDiscos['disco' + (alterado + 2) + pos[6]] == jogadorDaVez) {
-                console.log(jogadorDaVez)
+                console.log('ganhou')
                 return true;
             }
         }
@@ -273,17 +269,17 @@ const validaHorizontal = (posicao) => {
     else if (objDiscos['disco' + (alterado + 1) + pos[6]] == jogadorDaVez) {
         if (objDiscos['disco' + (alterado + 2) + pos[6]] == jogadorDaVez) {
             if (objDiscos['disco' + (alterado + 3) + pos[6]] == jogadorDaVez) {
-                console.log(jogadorDaVez)
+                console.log('ganhou')
                 return true;
             }
             else if (objDiscos['disco' + (alterado - 1) + pos[6]] == jogadorDaVez) {
-                console.log(jogadorDaVez)
+                console.log('ganhou')
                 return true;
             }
         }
         else if (objDiscos['disco' + (alterado - 1) + pos[6]] == jogadorDaVez) {
             if (objDiscos['disco' + (alterado - 2) + pos[6]] == jogadorDaVez) {
-                console.log(jogadorDaVez)
+                console.log('ganhou')
                 return true;
             }
         }
@@ -293,7 +289,7 @@ const validaHorizontal = (posicao) => {
 const validaVertical = (x, y) => {
     if (objDiscos[`disco${x}${y}`] === getPlayer() && objDiscos[`disco${x}${y - 1}`] === getPlayer() &&
         objDiscos[`disco${x}${y - 2}`] === getPlayer() && objDiscos[`disco${x}${y - 3}`] === getPlayer()) {
-        console.log('ganhou lek')
+            console.log('ganhou')
         return true
     }
     return false
@@ -301,11 +297,11 @@ const validaVertical = (x, y) => {
 
 const validaDiagonal = (x, y) => {
     if (diag1(x, y) + diag3(x, y) > 2) {
-        console.log("GG IZI")
+        console.log('ganhou')
         return true
     }
     if (diag2(x, y) + diag4(x, y) > 2) {
-        console.log("GG IZI")
+        console.log('ganhou')
         return true
     }
     return false
