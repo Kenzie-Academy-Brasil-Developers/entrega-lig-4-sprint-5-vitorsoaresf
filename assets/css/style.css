@@ -147,10 +147,11 @@ main{
 
 /* DANIEL */
 .paiInicio {
-    background-image: url(../img/backinicio.jpg);
-    background-size: 100%;
+    background-image: url(../img/init.jpg);
+    background-size: 178vh;
+    background-position: center;
     height: 100vh; 
-    display: none;
+    display: block;
 }
 .filhoInicio {
     background-color:rgba(0, 0, 0, 0.6);
@@ -159,8 +160,18 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+}
+.meiuca {
+    background-color:transparent;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .filhoInicio h1 {
+    margin-top: 20px;
     font-size: 70px;
     font-weight: 800;
     text-align: center;
@@ -178,6 +189,7 @@ main{
     border: 2px dotted white;
     border-radius: 20px;
     margin: 50px 0 80px 0;
+    max-width: 460px;
 }
 .filhoInicio button {
     background-color: rgba(218, 21, 21, 0.788);
@@ -333,7 +345,7 @@ main{
     background-image: url(../img/rules.jpg);
     height: 100vh;
     background-size: 112vw;
-    display: block;
+    display: none;
 }
 .filhoRegras {
     background-color:rgba(0, 0, 0, 0.5);
@@ -403,5 +415,15 @@ main{
     .regras {
         background-image: url(../img/rules768.jpg);
         background-size: 200vh;
+    }
+    .meiuca {
+        background-color: rgba(0, 0, 0, 0.5);
+        width: 500px;
+        border-radius: 25px;
+        justify-content: center;
+        height: 80%;
+    }
+    .meiuca h1 {
+        margin-top: 0;
     }
 }
