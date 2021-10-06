@@ -363,6 +363,7 @@ main{
     border-radius: 20px;
     background-color: rgba(0, 0, 0, 0.5);
     width: 90%;
+    max-width: 656px;
 }
 .botaoRegras {
     background-color: rgba(0, 0, 0, 0.8);
@@ -381,3 +382,26 @@ main{
 
 
 /* VITOR */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 768px) {
+    .regras {
+        background-image: url(../img/rules768.jpg);
+        background-size: 200vh;
+    }
+}
