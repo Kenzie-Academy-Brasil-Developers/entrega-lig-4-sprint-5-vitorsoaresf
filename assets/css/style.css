@@ -223,13 +223,21 @@ main{
     background-color: rgba(172, 171, 171, 0.685);
 }
 .paiSonic {
-    background-image: url(../img/greenzone.jpg);
+    background-image: url(../img/greenzone.png);
     height: 100vh;
-    background-size: 112vw;
+    background-size: 205vh;
     display: none;
 }
 .filhoSonic {
     background-color:rgba(0, 0, 0, 0.4);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.meioSonic {
     height: 100vh;
     width: 100vw;
     display: flex;
@@ -247,6 +255,7 @@ main{
     border: 2px dotted white;
     border-radius: 20px;
     margin: 0px 0 80px 0;
+    max-width: 400px;
 }
 .filhoSonic img {
     height: 300px;
@@ -284,11 +293,20 @@ main{
 .paiMario {
     background-image: url(../img/mariofundo.png);
     height: 100vh;
-    background-size: 112vw;
+    background-size: 170vh;
     display: none;
+    background-position: center;
 }
 .filhoMario {
     background-color:rgba(0, 0, 0, 0.4);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.meioMario {
     height: 100vh;
     width: 100vw;
     display: flex;
@@ -306,6 +324,7 @@ main{
     border: 2px dotted white;
     border-radius: 20px;
     margin: 0px 0 80px 0;
+    max-width: 400px;
 }
 .filhoMario img {
     height: 300px;
@@ -425,5 +444,48 @@ main{
     }
     .meiuca h1 {
         margin-top: 0;
+    }
+    .meioSonic {
+        background-color: rgba(0, 0, 0, 0.5);
+        width: 500px;
+        border-radius: 25px;
+        justify-content: start;
+        height: 90%;
+    }
+    .filhoSonic img {
+        height: 300px;
+        position: initial;
+    }
+    .sonicCorredor img {
+        height: 50px;
+        position: initial;
+    }
+    .filhoSonic p {
+        margin: 0;
+    }
+    .filhoSonic button {
+        bottom: 90px;
+    }
+
+    .meioMario {
+        background-color: rgba(0, 0, 0, 0.5);
+        width: 500px;
+        border-radius: 25px;
+        justify-content: start;
+        height: 90%;
+    }
+    .filhoMario img {
+        height: 300px;
+        position: initial;
+    }
+    .marioCorredor img {
+        height: 50px;
+        position: initial;
+    }
+    .filhoMario p {
+        margin: 0;
+    }
+    .filhoMario button {
+        bottom: 90px;
     }
 }
