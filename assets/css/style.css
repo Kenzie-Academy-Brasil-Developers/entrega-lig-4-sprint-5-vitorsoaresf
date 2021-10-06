@@ -150,7 +150,7 @@ main{
     background-image: url(../img/backinicio.jpg);
     background-size: 100%;
     height: 100vh; 
-    display: flex;
+    display: none;
 }
 .filhoInicio {
     background-color:rgba(0, 0, 0, 0.6);
@@ -329,6 +329,49 @@ main{
     font-size: 25px;
 }
 
+.regras {
+    background-image: url(../img/rules.jpg);
+    height: 100vh;
+    background-size: 112vw;
+    display: block;
+}
+.filhoRegras {
+    background-color:rgba(0, 0, 0, 0.5);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.filhoRegras h2 {
+    text-align: center;
+    color: white;
+    font-family: 'Pixelar Regular', sans-serif;
+    font-size: 50px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.filhoRegras p {
+    text-align: center;
+    font-family: 'Pixelar Regular', sans-serif;
+    color: white;
+    font-size: 25px;
+    padding: 10px;
+}
+.netoRegras {
+    border: 2px dotted white;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 90%;
+}
+.botaoRegras {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    font-family: 'Pixelar Regular', sans-serif;
+    font-size: 25px;
+    padding: 10px;
+    margin-top: 6%;
+}
 /* ERIVAN */
 
 
