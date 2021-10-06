@@ -314,3 +314,98 @@ main.addEventListener('click', addDisco);
 
 aplicacao();
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const botaoInicio = document.getElementById('botaoIniciar');
+const inicio = document.getElementById('paiInicio');
+
+botaoInicio.addEventListener('click', iniciar);
+
+function iniciar () {
+    setTimeout(function(){ 
+    inicio.style.display = 'none';
+    main.style.display = 'flex' 
+    }, 3000);
+}
