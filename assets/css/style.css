@@ -1,12 +1,17 @@
 main{
     display: flex;
-    align-items: flex-end;
-    background-color: brown;
+    flex-direction: column;
+    justify-content: flex-end;
     height: 100vh;
     background-image: url(../img/background.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.box_tabuleiro{
+    display: flex;
+    width: 100%;
 }
 .coluna{
     display: flex;
@@ -116,7 +121,7 @@ main{
     border-radius: 100%;
     border: double #e8000036;
     box-shadow: 0px 0px 0px 3px #ffca00;  
-    margin-left: -20px;
+    margin-left: 10px;
 }
 
 .player2{
@@ -126,14 +131,19 @@ main{
     border-radius: 100%;
     border: double #ffffff36;
     box-shadow: 0px 0px 0px 3px #a42c1e;
-    margin-right: -20px;
+    margin-right: 10px;
+}
+
+.player_desselecionado{
+    background-color: #61616136;
+    border-radius: 100%;
+    border: double #ffffff36;
+    box-shadow: 0px 0px 0px 3px #ffffff36;
 }
 
 .box_players{
     width: 100vw;
     display: flex;
     justify-content: space-between;
-    position: absolute;
-    top: 30%;
-
+    margin-bottom: 5px;
 }

@@ -1,6 +1,11 @@
 // VARIAVEIS
 
 const main = document.getElementById('app');
+const box_tabuleiro = document.createElement('div');
+box_tabuleiro.classList.add('box_tabuleiro');
+main.appendChild(box_tabuleiro);
+
+
 
 let isPlayer1 = true
 let objCol = {
@@ -15,6 +20,7 @@ let objCol = {
 
 let objDiscos = {}
 let playerNaoEstaJogando;
+let desseleciona = false;
 
 
 
@@ -32,7 +38,8 @@ const addDisco = (event) => {
     if (col === null || col === undefined) {
         return
     }
-
+        
+    desselecionaJogador();
 
     const idCol = col.id;
     if (objCol[idCol] === 6) {
@@ -63,6 +70,7 @@ const addDisco = (event) => {
     }
 
     playerNaoEstaJogando = setInterval(() =>{
+        desselecionaJogador();
         mudaPlayer();
         console.log(getPlayer())
 
@@ -71,11 +79,9 @@ const addDisco = (event) => {
 }
 
 const criarColuna = (id, id1) => {
-    const mainTag = document.getElementsByTagName('main')[0];
-
     const divColuna = document.createElement('div');
 
-    mainTag.appendChild(divColuna);
+    box_tabuleiro.appendChild(divColuna);
 
     divColuna.classList.add('coluna');
 
@@ -89,6 +95,25 @@ const criarColuna = (id, id1) => {
         divColuna.appendChild(divLinha);
 
         divLinha.id = 'bloco' + id1[a];
+    }
+}
+
+const desselecionaJogador = () =>{
+    const p1 = document.getElementById('p1');
+    const p2 = document.getElementById('p2');
+
+    if(isPlayer1){
+        console.log(getPlayer())
+        p1.classList.toggle('player_desselecionado');
+        if(desseleciona){
+            p2.classList.toggle('player_desselecionado');
+            bool = false
+        }
+    }else{
+        console.log(getPlayer())
+        p2.classList.toggle('player_desselecionado');
+        p1.classList.toggle('player_desselecionado');
+        desseleciona = true;
     }
 }
 
@@ -168,7 +193,7 @@ const getPlayer = () => {
     }
 }
 
-const jogadorCorrente = () => {
+const criaFeedbackJogadorCorrente = () => {
     const player1 = document.createElement('div');
     const player2 = document.createElement('div');
     const box_players = document.createElement('div');
@@ -176,6 +201,9 @@ const jogadorCorrente = () => {
     box_players.classList.add('box_players');
     player1.classList.add('player1');
     player2.classList.add('player2');
+
+    player1.id = 'p1';
+    player2.id = 'p2';
 
     box_players.appendChild(player1);
     box_players.appendChild(player2);
@@ -196,6 +224,8 @@ const negaMovimento = () => {
 }
 
 const novoJogo = () => {
+    
+    box_tabuleiro.style.width = '100%';
     for (let i = 0; i <= 6; i++) {
         let l = []
         let newI = ''
@@ -207,7 +237,7 @@ const novoJogo = () => {
         }
         criarColuna(i, l)
     }
-    // jogadorCorrente();
+    criaFeedbackJogadorCorrente();
 }
 
 const permiteMovimento = () => {
@@ -280,9 +310,6 @@ const validaDiagonal = (x, y) => {
     }
     return false
 }
-
-
-
 
 
 // EVENTOS
