@@ -4,8 +4,8 @@ const main = document.getElementById('app');
 const box_tabuleiro = document.createElement('div');
 box_tabuleiro.classList.add('box_tabuleiro');
 main.appendChild(box_tabuleiro);
-
-
+const botaoInicio = document.getElementById('botaoIniciar');
+const inicio = document.getElementById('paiInicio');
 
 let isPlayer1 = true
 let objCol = {
@@ -307,105 +307,17 @@ const validaDiagonal = (x, y) => {
     return false
 }
 
-
-// EVENTOS
-
-main.addEventListener('click', addDisco);
-
-aplicacao();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-const botaoInicio = document.getElementById('botaoIniciar');
-const inicio = document.getElementById('paiInicio');
-
-botaoInicio.addEventListener('click', iniciar);
-
-function iniciar () {
+const iniciar = () => {
     setTimeout(function(){ 
     inicio.style.display = 'none';
     main.style.display = 'flex' 
     }, 3000);
 }
+
+
+// EVENTOS
+
+main.addEventListener('click', addDisco);
+botaoInicio.addEventListener('click', iniciar);
+
+aplicacao();
