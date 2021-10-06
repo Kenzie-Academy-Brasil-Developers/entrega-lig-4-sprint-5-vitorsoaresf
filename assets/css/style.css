@@ -9,6 +9,31 @@ main{
     background-size: cover;
 }
 
+#buttonBar{
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+#buttonBar>div{
+    border: red solid 4px;
+    font-size: 25px;
+    border-radius: 50%;
+    color: red;
+    background-color: #289DE3;
+    text-align: center;
+    padding: 0.2em;
+    height: 1.5em;
+    width: 1.5em;
+    display: table-cell;
+    vertical-align: middle;
+    cursor: pointer;
+}
+#buttonBar>div:hover{
+    background-color: #1d71a1
+    color: #d00;
+    border-color: #d00;
+}
+
 .box_tabuleiro{
     display: flex;
     width: 100%;

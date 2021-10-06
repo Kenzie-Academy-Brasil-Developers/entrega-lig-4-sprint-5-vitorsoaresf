@@ -6,6 +6,9 @@ box_tabuleiro.classList.add('box_tabuleiro');
 main.appendChild(box_tabuleiro);
 const botaoInicio = document.getElementById('botaoIniciar');
 const inicio = document.getElementById('paiInicio');
+const buttonSound = document.getElementById('buttonSound')
+const buttonHelp = document.getElementById('buttonHelp')
+const buttonInfo = document.getElementById('buttonInfo')
 
 let isPlayer1 = true
 let objCol = {
@@ -17,6 +20,7 @@ let objCol = {
     coluna5: 0,
     coluna6: 0
 }
+let soundOn = true
 
 let objDiscos = {}
 let playerNaoEstaJogando;
@@ -25,6 +29,7 @@ let desseleciona = false;
 
 
 // FUNÇÕES
+
 
 const aplicacao = () => {
     novoJogo();
@@ -110,6 +115,15 @@ const desselecionaJogador = () =>{
         p2.classList.toggle('player_desselecionado');
         p1.classList.toggle('player_desselecionado');
         desseleciona = true;
+    }
+}
+
+function soundToggle(){
+    soundOn = !soundOn
+    if(soundOn){
+        buttonSound.innerHTML='<i class="fas fa-volume-up"></i>'
+    }else{
+        buttonSound.innerHTML='<i class="fas fa-volume-mute"></i>'
     }
 }
 
@@ -319,5 +333,7 @@ const iniciar = () => {
 
 main.addEventListener('click', addDisco);
 botaoInicio.addEventListener('click', iniciar);
-
+buttonSound.addEventListener('click',soundToggle)
+//buttonHelp.addEventListener
+//buttonInfo.addEventListener
 aplicacao();
