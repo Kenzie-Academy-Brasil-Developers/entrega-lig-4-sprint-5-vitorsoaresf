@@ -13,7 +13,10 @@ let objCol = {
     coluna6: 0
 }
 
-objDiscos = {}
+let objDiscos = {}
+let playerNaoEstaJogando;
+
+
 
 // FUNÇÕES
 
@@ -23,9 +26,14 @@ const aplicacao = () => {
 
 const addDisco = (event) => {
     let col = event.target.closest('.coluna');
+
+    clearInterval(playerNaoEstaJogando);
+
     if (col === null || col === undefined) {
         return
     }
+
+
     const idCol = col.id;
     if (objCol[idCol] === 6) {
         negaMovimento();
@@ -35,24 +43,31 @@ const addDisco = (event) => {
         if (celula.lastChild === null) {
             objCol[idCol]++;
             const disco = document.createElement('div');
-            if(isPlayer1){
+            if (isPlayer1) {
                 disco.classList.add('discoPlayer1');
                 disco.id = 'discoPlayer1';
-                objDiscos[`disco${idCol[6]}${objCol[idCol]}`]="Player1"
-            }else{
+                objDiscos[`disco${idCol[6]}${objCol[idCol]}`] = "Player1"
+            } else {
                 disco.classList.add('discoPlayer2');
                 disco.id = 'discoPlayer2';
-                objDiscos[`disco${idCol[6]}${objCol[idCol]}`]="Player2"
-            } 
+                objDiscos[`disco${idCol[6]}${objCol[idCol]}`] = "Player2"
+            }
 
             celula.appendChild(disco);
             celula = col.children[col.children.length - objCol[idCol] - 1];
             validaHorizontal(`disco${idCol[6]}${objCol[idCol]}`);
-            validaDiagonal(Number(idCol[6]),objCol[idCol])
+            validaDiagonal(Number(idCol[6]), objCol[idCol])
             validaVertical(Number(idCol[6]), objCol[idCol]);
             mudaPlayer();
         }
     }
+
+    playerNaoEstaJogando = setInterval(() =>{
+        mudaPlayer();
+        console.log(getPlayer())
+
+    }, 3000);
+
 }
 
 const criarColuna = (id, id1) => {
@@ -77,6 +92,74 @@ const criarColuna = (id, id1) => {
     }
 }
 
+const diag1 = (x, y) => {
+    if (getDisco(x + 1, y + 1) === getPlayer()) {
+        if (getDisco(x + 2, y + 2) === getPlayer()) {
+            if (getDisco(x + 3, y + 3) === getPlayer()) {
+                return 3
+            } else {
+                return 2
+            }
+        } else {
+            return 1
+        }
+    } else {
+        return 0
+    }
+}
+
+const diag2 = (x, y) => {
+    if (getDisco(x + 1, y - 1) === getPlayer()) {
+        if (getDisco(x + 2, y - 2) === getPlayer()) {
+            if (getDisco(x + 3, y - 3) === getPlayer()) {
+                return 3
+            } else {
+                return 2
+            }
+        } else {
+            return 1
+        }
+    } else {
+        return 0
+    }
+}
+
+const diag3 = (x, y) => {
+    if (getDisco(x - 1, y - 1) === getPlayer()) {
+        if (getDisco(x - 2, y - 2) === getPlayer()) {
+            if (getDisco(x - 3, y - 3) === getPlayer()) {
+                return 3
+            } else {
+                return 2
+            }
+        } else {
+            return 1
+        }
+    } else {
+        return 0
+    }
+}
+
+const diag4 = (x, y) => {
+    if (getDisco(x - 1, y + 1) === getPlayer()) {
+        if (getDisco(x - 2, y + 2) === getPlayer()) {
+            if (getDisco(x - 3, y + 3) === getPlayer()) {
+                return 3
+            } else {
+                return 2
+            }
+        } else {
+            return 1
+        }
+    } else {
+        return 0
+    }
+}
+
+const getDisco = (x, y) => {
+    return objDiscos[`disco${x}${y}`]
+}
+
 const getPlayer = () => {
     if (isPlayer1) {
         return "Player1"
@@ -85,15 +168,31 @@ const getPlayer = () => {
     }
 }
 
+const jogadorCorrente = () => {
+    const player1 = document.createElement('div');
+    const player2 = document.createElement('div');
+    const box_players = document.createElement('div');
+
+    box_players.classList.add('box_players');
+    player1.classList.add('player1');
+    player2.classList.add('player2');
+
+    box_players.appendChild(player1);
+    box_players.appendChild(player2);
+
+
+    main.insertBefore(box_players, main.firstChild);
+}
+
 const mudaPlayer = () => {
     isPlayer1 = !isPlayer1
 }
 
-const negaMovimento = () =>{
+const negaMovimento = () => {
     const divNaoInsere = document.createElement('div');
     divNaoInsere.classList.add('naoinsere');
-    main.insertBefore(divNaoInsere,main.firstChild);
-    setTimeout(()=> app.removeChild(divNaoInsere),2000);
+    main.insertBefore(divNaoInsere, main.firstChild);
+    setTimeout(() => app.removeChild(divNaoInsere), 2000);
 }
 
 const novoJogo = () => {
@@ -108,149 +207,81 @@ const novoJogo = () => {
         }
         criarColuna(i, l)
     }
+    // jogadorCorrente();
 }
 
-const permiteMovimento = () =>{
+const permiteMovimento = () => {
     const divNaoInsere = document.createElement('div');
     divNaoInsere.classList.add('insere');
-    main.insertBefore(divNaoInsere,main.firstChild);
-    setTimeout(()=> app.removeChild(divNaoInsere),2000);
+    main.insertBefore(divNaoInsere, main.firstChild);
+    setTimeout(() => app.removeChild(divNaoInsere), 2000);
 }
-
-//Funções André
 
 const validaHorizontal = (posicao) => {
     let pos = posicao.split('')
-    let jogadorDaVez = objDiscos[posicao]       
+    let jogadorDaVez = objDiscos[posicao]
     let alterado = parseInt(pos[5])
-    
-    if (objDiscos['disco' + (alterado - 1) + pos[6]] == jogadorDaVez){
-        if (objDiscos['disco' + (alterado - 2) + pos[6]] == jogadorDaVez){
-            if (objDiscos['disco' + (alterado - 3) + pos[6]] == jogadorDaVez){                    
+
+    if (objDiscos['disco' + (alterado - 1) + pos[6]] == jogadorDaVez) {
+        if (objDiscos['disco' + (alterado - 2) + pos[6]] == jogadorDaVez) {
+            if (objDiscos['disco' + (alterado - 3) + pos[6]] == jogadorDaVez) {
                 console.log(jogadorDaVez)
                 return true;
             }
-            else if (objDiscos['disco' + (alterado + 1) + pos[6]] == jogadorDaVez){
+            else if (objDiscos['disco' + (alterado + 1) + pos[6]] == jogadorDaVez) {
                 console.log(jogadorDaVez)
                 return true;
             }
         }
         else if (objDiscos['disco' + (alterado + 1) + pos[6]] == jogadorDaVez) {
-            if (objDiscos['disco' + (alterado + 2) + pos[6]] == jogadorDaVez){
+            if (objDiscos['disco' + (alterado + 2) + pos[6]] == jogadorDaVez) {
                 console.log(jogadorDaVez)
                 return true;
             }
-        } 
+        }
     }
-    else if (objDiscos['disco' + (alterado + 1) + pos[6]] == jogadorDaVez){
-        if (objDiscos['disco' + (alterado + 2) + pos[6]] == jogadorDaVez){
-            if (objDiscos['disco' + (alterado + 3) + pos[6]] == jogadorDaVez){                    
+    else if (objDiscos['disco' + (alterado + 1) + pos[6]] == jogadorDaVez) {
+        if (objDiscos['disco' + (alterado + 2) + pos[6]] == jogadorDaVez) {
+            if (objDiscos['disco' + (alterado + 3) + pos[6]] == jogadorDaVez) {
                 console.log(jogadorDaVez)
                 return true;
             }
-            else if (objDiscos['disco' + (alterado - 1) + pos[6]] == jogadorDaVez){
+            else if (objDiscos['disco' + (alterado - 1) + pos[6]] == jogadorDaVez) {
                 console.log(jogadorDaVez)
                 return true;
             }
         }
         else if (objDiscos['disco' + (alterado - 1) + pos[6]] == jogadorDaVez) {
-            if (objDiscos['disco' + (alterado - 2) + pos[6]] == jogadorDaVez){
+            if (objDiscos['disco' + (alterado - 2) + pos[6]] == jogadorDaVez) {
                 console.log(jogadorDaVez)
                 return true;
             }
-        } 
-    }    
+        }
+    }
 }
 
-
-//Funções Daniel
 const validaVertical = (x, y) => {
-    if (objDiscos[`disco${x}${y}`] === getPlayer() && objDiscos[`disco${x}${y-1}`] === getPlayer() && 
-        objDiscos[`disco${x}${y-2}`] === getPlayer() && objDiscos[`disco${x}${y-3}`] === getPlayer()) {
-            console.log('ganhou lek')
-            return true
-        }
-    return false
-}
-
-//Funções Erivan
-function validaDiagonal(x,y){
-    if(diag1(x,y)+diag3(x,y)>2){
-        console.log("GG IZI")
-        return true
-    }
-    if(diag2(x,y)+diag4(x,y)>2){
-        console.log("GG IZI")
+    if (objDiscos[`disco${x}${y}`] === getPlayer() && objDiscos[`disco${x}${y - 1}`] === getPlayer() &&
+        objDiscos[`disco${x}${y - 2}`] === getPlayer() && objDiscos[`disco${x}${y - 3}`] === getPlayer()) {
+        console.log('ganhou lek')
         return true
     }
     return false
 }
-function diag1(x, y) {
-    if(getDisco(x+1,y+1)===getPlayer()){
-        if(getDisco(x+2,y+2)===getPlayer()){
-            if(getDisco(x+3,y+3)===getPlayer()){
-                return 3
-            }else{
-                return 2
-            }
-        }else{
-            return 1
-        }
-    }else{
-        return 0
+
+const validaDiagonal = (x, y) => {
+    if (diag1(x, y) + diag3(x, y) > 2) {
+        console.log("GG IZI")
+        return true
     }
-}
-function diag2(x,y){
-    if(getDisco(x+1,y-1)===getPlayer()){
-        if(getDisco(x+2,y-2)===getPlayer()){
-            if(getDisco(x+3,y-3)===getPlayer()){
-                return 3
-            }else{
-                return 2
-            }
-        }else{
-            return 1
-        }
-    }else{
-        return 0
+    if (diag2(x, y) + diag4(x, y) > 2) {
+        console.log("GG IZI")
+        return true
     }
-}
-function diag3(x,y){
-    if(getDisco(x-1,y-1)===getPlayer()){
-        if(getDisco(x-2,y-2)===getPlayer()){
-            if(getDisco(x-3,y-3)===getPlayer()){
-                return 3
-            }else{
-                return 2
-            }
-        }else{
-            return 1
-        }
-    }else{
-        return 0
-    }
-}
-function diag4(x,y){
-    if(getDisco(x-1,y+1)===getPlayer()){
-        if(getDisco(x-2,y+2)===getPlayer()){
-            if(getDisco(x-3,y+3)===getPlayer()){
-                return 3
-            }else{
-                return 2
-            }
-        }else{
-            return 1
-        }
-    }else{
-        return 0
-    }
-}
-function getDisco (x,y){
-    return objDiscos[`disco${x}${y}`]
+    return false
 }
 
 
-//Funções Vitor
 
 
 
@@ -259,3 +290,4 @@ function getDisco (x,y){
 main.addEventListener('click', addDisco);
 
 aplicacao();
+
