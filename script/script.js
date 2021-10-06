@@ -310,7 +310,7 @@ const validaDiagonal = (x, y) => {
 const iniciar = () => {
     setTimeout(function(){ 
     inicio.style.display = 'none';
-    main.style.display = 'flex' 
+    main.style.display = 'none' 
     }, 3000);
 }
 
