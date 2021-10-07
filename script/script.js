@@ -31,6 +31,7 @@ const resetSonic = document.getElementById('botaoResetaSonic');
 const resetMario = document.getElementById('botaoResetaMario');
 const telaEmpate = document.getElementById('empate');
 const resetEmpate = document.getElementById('botaoResetEmpate');
+const musicaDerrota = document.getElementById('musicaDerrota');
 
 let isPlayer1 = true
 let objCol = {
@@ -103,16 +104,17 @@ const addDisco = (event) => {
             mudaPlayer();
         }
         if(objCol.coluna0===6&&
-           objCol.coluna1===6&&
-           objCol.coluna2===6&&
-           objCol.coluna3===6&&
-           objCol.coluna4===6&&
-           objCol.coluna5===6&&
-           objCol.coluna6===6
-        ){
-            validaEmpate();
-        }
+            objCol.coluna1===6&&
+            objCol.coluna2===6&&
+            objCol.coluna3===6&&
+            objCol.coluna4===6&&
+            objCol.coluna5===6&&
+            objCol.coluna6===6
+         ){
+             validaEmpate();
+         }
     }
+
     playerNaoEstaJogando = setInterval(() => {
         desselecionaJogador();
         mudaPlayer();
@@ -309,7 +311,8 @@ const novoJogo = () => {
     criaTime();
     criaFeedbackJogadorCorrente();
     musicaVitoriaMario.pause();
-    musicaVitoriaSonic.pause();    
+    musicaVitoriaSonic.pause();
+    musicaDerrota.pause();    
 }
 
 const permiteMovimento = () => {
@@ -400,7 +403,7 @@ function validaVitoria() {
     if (getPlayer() == 'Player1') {
         vitoriaSonic.style.display = 'block'
         main.style.display = 'none'
-        musicaDeFundo.pause();
+        musicaDeFundo.pause(); 
         musicaVitoriaSonic.play();
         musicaVitoriaSonic.loop = true;
         vozSonic.play();
@@ -419,6 +422,8 @@ function validaEmpate () {
     main.style.display = 'none'
     musicaDeFundo.pause();
     musicaEmpate.play();
+    musicaDerrota.play();
+    musicaDerrota.loop = true;
 }
 
 function resetaSonic() {
@@ -476,8 +481,7 @@ function resetaMario() {
     vitoriaMario.style.display = 'none'
     main.style.display = 'flex';
     
-    novoJogo();
-    musicaDeFundo.currentTime = 0;
+    novoJogo();musicaDeFundo.currentTime = 0;
     musicaDeFundo.play();
 }
 
@@ -509,7 +513,6 @@ function resetaEmpate() {
     novoJogo();
     musicaDeFundo.currentTime = 0;
     musicaDeFundo.play();
-
 }
 
 

@@ -18,29 +18,30 @@ main{
 }
 #buttonBar>div{
     margin: 3px;
-    border: red solid 4px;
     font-size: 25px;
     border-radius: 50%;
-    color: red;
-    background-color: #289DE3;
-    text-align: center;
-    padding-left: 0.25em;
-    padding-right: 0.25em;
-    padding-top: 0.5em;
-    height: 1.5em;
-    width: 1.5em;
-    display: inline-block;
+    color: #1d00ff7a;
+    background-color: #e3dd28;
+    padding: 0.5em;
+    height: 0.3em;
+    width: 0.3em;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 #buttonBar>div:hover{
     background-color: #135074 ;
     color: #a00;
     border-color: #a00;
 }
-
+.fas{
+    font-size: 18px;
+}
 .box_tabuleiro{
     display: flex;
     width: 100%;
+    background-image: url(../img/Grama.png);
 }
 .coluna{
     display: flex;
@@ -49,13 +50,13 @@ main{
     justify-content: space-around;
     width: 14.3%;
     height: 60vh;
-    background-color: #289DE3;
+    /* background-color: #289DE3; */
     cursor: pointer;
 
 }
 
 .coluna:hover{
-    background-color: #57a7d6;
+    background-color: #8ad690;
 }
 
 .linha{
@@ -63,8 +64,8 @@ main{
     height: 40px;
     display: flex;
     justify-content: center;
-    background-color: #03406C;
-    border: 2px ridge #61b9ec;
+    background-color: #050;
+    border: 2px ridge #3d3;
     border-radius: 100%;
 }
 
@@ -72,10 +73,10 @@ main{
 
     width: 80%;
     height: 80%;
-    background-color: #ffca00;
+    background-color: #00f;
     border-radius: 100%;
-    border: double #e8000036;
-    box-shadow: 0px 0px 0px 3px #ffca00;
+    border: double #ffd030;
+    box-shadow: 0px 0px 0px 3px #00f;
     animation-name: disco;
     animation-duration: 1s;
 }
@@ -85,7 +86,7 @@ main{
     height: 80%;
     background-color: #A42C1E;
     border-radius: 100%;
-    border: double #ffffff36;
+    border: double #ffd030;
     box-shadow: 0px 0px 0px 3px #a42c1e;
     animation-name: disco;
     animation-duration: 1s;
@@ -181,7 +182,8 @@ main{
 .box_time{
     width: 100vw;
     height: 10px;
-    background-color: #289DE3;
+    background-color: green;
+    /* ffca00 */
 }
 
 .estilo_time1{
@@ -195,7 +197,7 @@ main{
 .estilo_time2{
     width: 100vw;
     height: 10px;
-    background-color: #ffca00;
+    background-color: #289DE3;
     animation-name: time2;
     animation-duration: 15s;
 }
