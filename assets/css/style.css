@@ -43,6 +43,9 @@ main{
     width: 100%;
     background-image: url(../img/Grama.png);
 }
+.box_tabuleiro.hell{
+    
+}
 .coluna{
     display: flex;
     flex-direction: column;
@@ -52,7 +55,6 @@ main{
     height: 60vh;
     /* background-color: #289DE3; */
     cursor: pointer;
-
 }
 
 .coluna:hover{
@@ -669,6 +671,8 @@ main{
     margin-top: 20px;
     border-radius: 20px;
 }
+
+
 .infoFoto h3 {
     font-family: 'Pixelar Regular', sans-serif;
     color: white;
@@ -684,15 +688,31 @@ main{
     margin-top: 10px;
 }
 
-/* ERIVAN */
+/* HELL MODE */
+main.hell{
+    background-image: url(../img/hellmodewp.jpg);
+}
+.box_tabuleiro.hell{
+    background-image: none;
+    background-size: cover;
+}
+.linha.hell{
+    background-color: transparent;
+    border-color: #251200;
+}
+.linha.hell>.estilo_time1#time{
+    background-color: black;
+}
 
-
-
-/* ADNRE */
-
-
-
-
+.box_time.hell{
+    background-color: transparent;
+}
+.box_time.hell>.estilo_time1#time{
+    background-color: black;
+}
+.box_time.hell>.estilo_time2#time{
+    background-color: red;
+}
 
 @media (min-width: 768px){
     .linha{
