@@ -227,7 +227,7 @@ main{
     background-size: 178vh;
     background-position: center;
     height: 100vh; 
-    display: none;
+    display: block;
 }
 .filhoInicio {
     background-color:rgba(0, 0, 0, 0.6);
@@ -364,6 +364,7 @@ main{
     color: white;
     background-color: rgba(0, 0, 0, 0.9);
     font-size: 25px;
+    border-radius: 20px;
 }
 
 .paiMario {
@@ -434,6 +435,7 @@ main{
     color: white;
     background-color: rgba(0, 0, 0, 0.9);
     font-size: 25px;
+    border-radius: 20px;
 }
 
 .regras {
@@ -479,6 +481,7 @@ main{
     font-size: 25px;
     padding: 10px;
     margin-top: 6%;
+    border-radius: 20px;
 }
 
 .empate {
@@ -549,13 +552,14 @@ main{
     color: white;
     background-color: rgba(0, 0, 0, 0.9);
     font-size: 25px;
+    border-radius: 20px;
 }
 
 .info {
     background-image: url(../img/fundostar.jpg);
     height: 100vh;
     background-size: 178vh;
-    display: block;
+    display: none;
     background-position: center;
 }
 .filhoInfo {
@@ -608,6 +612,7 @@ main{
     background-color: rgba(0, 0, 0, 0.9);
     font-size: 25px;
     margin-top: 20px;
+    border-radius: 20px;
 }
 .infoFoto h3 {
     font-family: 'Pixelar Regular', sans-serif;
