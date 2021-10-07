@@ -562,6 +562,10 @@ function INFERNO() {
     vozSonic.src = "assets/musicas para o jogo/nicolau.mp3"
     boxTime = document.getElementsByClassName("box_time")[0]
     boxTime.classList.add("hell")
+    moedaDoMario.src = 'assets/musicas para o jogo/bola de fogo.mp3'
+    moedaDoSonic.src = 'assets/musicas para o jogo/bola de fogo.mp3'
+    moedaDoMario.play()
+
 }
 
 
