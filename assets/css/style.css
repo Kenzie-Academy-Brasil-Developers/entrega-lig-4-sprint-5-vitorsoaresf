@@ -366,6 +366,7 @@ main{
     color: white;
     background-color: rgba(0, 0, 0, 0.9);
     font-size: 25px;
+    border-radius: 20px;
 }
 
 .paiMario {
@@ -436,6 +437,7 @@ main{
     color: white;
     background-color: rgba(0, 0, 0, 0.9);
     font-size: 25px;
+    border-radius: 20px;
 }
 
 .regras {
@@ -481,6 +483,7 @@ main{
     font-size: 25px;
     padding: 10px;
     margin-top: 6%;
+    border-radius: 20px;
 }
 
 .empate {
@@ -551,7 +554,85 @@ main{
     color: white;
     background-color: rgba(0, 0, 0, 0.9);
     font-size: 25px;
+    border-radius: 20px;
 }
+
+.info {
+    background-image: url(../img/fundostar.jpg);
+    height: 100vh;
+    background-size: 178vh;
+    display: none;
+    background-position: center;
+}
+.filhoInfo {
+    background-color:rgba(0, 0, 0, 0.4);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.meioInfo {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 540px;
+}
+.filhoInfo a {
+    font-family: 'Pixelar Regular', sans-serif;
+    color: white;
+    font-size: 25px;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 80%;
+    text-align: center;
+    padding: 10px;
+    border: 2px dotted white;
+    border-radius: 20px;
+    margin: 0px 0 80px 0;
+    max-width: 400px;
+    text-decoration: none 
+}
+.meioInfo img {
+    width: 100px;
+}
+.filhoInfo h2 {
+    margin-top: 20px;
+    font-size: 50px;
+    font-weight: 800;
+    text-align: center;
+    font-family: 'Pixelar Regular', sans-serif;
+    color: white;
+}
+.filhoInfo button {
+    height: 60px;
+    width: 150px;
+    font-family: 'Pixelar Regular', sans-serif;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.9);
+    font-size: 25px;
+    margin-top: 20px;
+    border-radius: 20px;
+}
+
+
+.infoFoto h3 {
+    font-family: 'Pixelar Regular', sans-serif;
+    color: white;
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+.infoFoto {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 90%;
+    margin-top: 10px;
+}
+
 /* HELL MODE */
 main.hell{
     background-image: url(../img/hellmodewp.jpg);
@@ -564,7 +645,6 @@ main.hell{
     background-color: transparent;
     border-color: #251200;
 }
-
 
 
 
@@ -662,6 +742,22 @@ main.hell{
     }
     .filhoEmpate button {
         bottom: 10%;
+    }
+
+    .filhoInfo {
+        background-color: rgba(0, 0, 0, 0.5);
+        justify-content: center;
+    }
+    .meioInfo {
+        background-color: rgba(0, 0, 0, 0.5);
+        width: 500px;
+        border-radius: 25px;
+        justify-content: space-evenly;
+        height: 95%;
+    }
+    .meioInfo button {
+        margin-top: 5px;
+        margin-bottom: 5px;
     }
 }
 
