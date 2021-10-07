@@ -1,3 +1,5 @@
+/* VITOR */
+
 main{
     display: none;
     flex-direction: column;
@@ -145,7 +147,50 @@ main{
     filter: grayscale(1);
 }
 
+/* TEMPO PARA A JOGADA DO PLAYER */
+
+.box_time{
+    width: 100vw;
+    height: 10px;
+    background-color: #289DE3;
+}
+
+.estilo_time1{
+    width: 100vw;
+    height: 10px;
+    background-color: #A42C1E;
+    animation-name: time1;
+    animation-duration: 15s;
+}
+
+.estilo_time2{
+    width: 100vw;
+    height: 10px;
+    background-color: #ffca00;
+    animation-name: time2;
+    animation-duration: 15s;
+}
+
+@keyframes time1 {
+    0%{
+        margin-left: -100vw;
+    }
+    100%{
+        margin-left: 0vw;
+    }
+}
+
+@keyframes time2 {
+    0%{
+        margin-left: 100vw;
+    }
+    100%{
+        margin-left: 0px;
+    }
+}
+
 /* DANIEL */
+
 .paiInicio {
     background-image: url(../img/backinicio.jpg);
     background-size: 100%;
@@ -209,57 +254,11 @@ main{
     height: 130px;
     background-color: rgba(172, 171, 171, 0.685);
 }
+
+
 /* ERIVAN */
 
 
 
 /* ADNRE */
 
-
-
-/* VITOR */
-
-/* TEMPO PARA A JOGADA DO PLAYER */
-
-.box_time{
-    width: 100vw;
-    height: 10px;
-    background-color: #289DE3;
-}
-
-.estilo_time1{
-    width: 100vw;
-    height: 10px;
-    background-color: #A42C1E;
-    animation-name: time1;
-    animation-duration: 15s;
-}
-
-.estilo_time2{
-    width: 100vw;
-    height: 10px;
-    background-color: #ffca00;
-    animation-name: time2;
-    animation-duration: 15s;
-}
-
-
-
-
-@keyframes time1 {
-    0%{
-        margin-left: -100vw;
-    }
-    100%{
-        margin-left: 0vw;
-    }
-}
-
-@keyframes time2 {
-    0%{
-        margin-left: 100vw;
-    }
-    100%{
-        margin-left: 0px;
-    }
-}
