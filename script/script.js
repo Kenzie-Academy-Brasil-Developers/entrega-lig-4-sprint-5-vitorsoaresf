@@ -546,12 +546,16 @@ function resetaEmpate() {
     musicaDeFundo.play();
 }
 function INFERNO() {
+    const player1 = document.getElementById('p1');
+    const player2 = document.getElementById('p2');
     main.classList.add("hell")
     box_tabuleiro.classList.add("hell")
     cells = document.getElementsByClassName("linha")
     for(let i=0;i<cells.length;i++) {
         cells[i].classList.add("hell")
     }
+    player1.classList.add("hell")
+    player2.classList.add("hell")
     quedaMoeda.src = "assets/musicas para o jogo/Risada do coring.mp3"
     musicaDeFundo.src = "assets/musicas para o jogo/ERA   Amen.mp3"
     comecoDaPartida.src = ""
@@ -565,7 +569,6 @@ function INFERNO() {
     moedaDoMario.src = 'assets/musicas para o jogo/bola de fogo.mp3'
     moedaDoSonic.src = 'assets/musicas para o jogo/bola de fogo.mp3'
     moedaDoMario.play()
-
 }
 
 

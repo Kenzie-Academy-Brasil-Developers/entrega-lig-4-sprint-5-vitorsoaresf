@@ -716,6 +716,9 @@ main.hell{
 .box_time.hell>.estilo_time2#time{
     background-color: red;
 }
+.player1.hell{
+    background-image: url(../img/dan.png);
+}
 
 @media (min-width: 768px){
     .linha{
