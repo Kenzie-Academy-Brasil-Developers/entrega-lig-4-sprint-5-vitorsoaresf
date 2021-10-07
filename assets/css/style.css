@@ -34,6 +34,8 @@ main{
 .linha{
     width: 40px;
     height: 40px;
+    display: flex;
+    justify-content: center;
     background-color: #03406C;
     border: 2px ridge #61b9ec;
     border-radius: 100%;
@@ -268,29 +270,28 @@ main{
 
 @media (min-width: 768px){
     .linha{
-        width: 50px;
-        height: 50px;
+        width: 40px;
+        height: 40px;
     }
 
     .discoPlayer1{
-        width: 90%;
-        height: 90%;
+        width: 80%;
+        height: 80%;
     }
     
     .discoPlayer2{
-        width: 90%;
-        height: 90%;
+        width: 80%;
+        height: 80%;
     }
 }
 
 
 @media (min-width: 1024px){
-    .linha{
-        width: 60px;
-        height: 60px;
-    }
-
     
+    .linha{
+        width: 50px;
+        height: 50px;
+    }
     .player1{
         width: 146px;
         height: 141px;
@@ -304,8 +305,17 @@ main{
 
 @media (min-width: 1440px){
     .linha{
-        width: 70px;
-        height: 70px
+        width: 60px;
+        height: 60px;
+    }
+    .discoPlayer1{
+        width: 90%;
+        height: 90%;
+    }
+    
+    .discoPlayer2{
+        width: 90%;
+        height: 90%;
     }
 
     .naoinsere{
