@@ -13,6 +13,8 @@ const paiDiscosAdd = [];
 const botaoInicio = document.getElementById('botaoIniciar');
 const inicio = document.getElementById('paiInicio');
 const buttonSound = document.getElementById('buttonSound');
+const buttonHelp = document.getElementById('buttonHelp');
+const buttonInfo = document.getElementById('buttonInfo');
 const vitoriaSonic = document.getElementById('sonicGanha');
 const vitoriaMario = document.getElementById('marioGanha');
 const musicaAbertura = document.getElementById('musicaAberturaDeJogo');
@@ -32,6 +34,12 @@ const telaEmpate = document.getElementById('empate');
 const resetEmpate = document.getElementById('botaoResetEmpate');
 const musicaDerrota = document.getElementById('musicaDerrota');
 const hellMode = document.getElementById('Coringa')
+const filhoSonic = document.getElementsByClassName('filhoSonic')
+const meioSonic = document.getElementsByClassName('meioSonic')
+const filhoMario = document.getElementsByClassName('filhoMario')
+const meioMario = document.getElementsByClassName('meioMario')
+const imgSonic = document.getElementsByClassName('imgSonic')
+const buraco = document.getElementById('buraco')
 
 let isPlayer1 = true
 let objCol = {
@@ -194,6 +202,7 @@ function soundToggle() {
 }
 
 const sincronizaAnimacoes = () => {
+    console.log(paiDiscosAdd)
 
     for (let i = 0; i < paiDiscosAdd.length;i++){
         if (paiDiscosAdd[i].id === 'discoPlayer1') {
@@ -427,6 +436,9 @@ const iniciar = () => {
 
     musicaAbertura.pause();
     quedaMoeda.play();
+    const moeda = document.createElement('div')
+    moeda.classList.add('moeda')
+    buraco.appendChild(moeda)
 }
 
 function validaVitoria() {
@@ -551,6 +563,14 @@ function INFERNO() {
     for(let i=0;i<cells.length;i++) {
         cells[i].classList.add("hell")
     }
+    vitoriaSonic.classList.add("hell")
+    vitoriaMario.classList.add("hell")
+    filhoSonic.classList.add("hell")
+    meioSonic.classList.add("hell")
+    filhoMario.classList.add("hell")
+    meioMario.classList.add("hell")
+    imgSonic.src = "assets/img/niccor.png"
+
     quedaMoeda.src = "assets/musicas para o jogo/Risada do coring.mp3"
     musicaDeFundo.src = "assets/musicas para o jogo/ERA   Amen.mp3"
     comecoDaPartida.src = ""
@@ -559,12 +579,8 @@ function INFERNO() {
     musicaVitoriaMario.src = "assets/musicas para o jogo/Música Angelica.mp3"
     vozMario.src = ""
     vozSonic.src = "assets/musicas para o jogo/nicolau.mp3"
-    boxTime = document.getElementsByClassName("box_time")[0]
-    boxTime.classList.add("hell")
     moedaDoMario.src = 'assets/musicas para o jogo/bola de fogo.mp3'
     moedaDoSonic.src = 'assets/musicas para o jogo/bola de fogo.mp3'
-    moedaDoMario.play()
-
 }
 
 
@@ -576,8 +592,10 @@ buttonSound.addEventListener('click', soundToggle);
 resetSonic.addEventListener('click', resetaSonic);
 resetMario.addEventListener('click', resetaMario);
 resetEmpate.addEventListener('click', resetaEmpate);
-hellMode.addEventListener('click',INFERNO)
+//buttonHelp.addEventListener
+//buttonInfo.addEventListener
 
+hellMode.addEventListener('click',INFERNO)
 aplicacao();
 
 const info = document.getElementById('info');
@@ -611,3 +629,7 @@ function voltarDasRegras () {
     main.style.display = 'flex';
     regras.style.display = 'none'
 }
+
+
+
+
