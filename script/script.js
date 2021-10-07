@@ -32,6 +32,7 @@ const resetMario = document.getElementById('botaoResetaMario');
 const telaEmpate = document.getElementById('empate');
 const resetEmpate = document.getElementById('botaoResetEmpate');
 const musicaDerrota = document.getElementById('musicaDerrota');
+const hellMode = document.getElementById('Coringa')
 
 let isPlayer1 = true
 let objCol = {
@@ -514,6 +515,14 @@ function resetaEmpate() {
     musicaDeFundo.currentTime = 0;
     musicaDeFundo.play();
 }
+function INFERNO() {
+    main.classList.add("hell")
+    box_tabuleiro.classList.add("hell")
+    cells = document.getElementsByClassName("linha")
+    for(let i=0;i<cells.length;i++) {
+        cells[i].classList.add("hell")
+    }
+}
 
 
 // EVENTOS
@@ -526,4 +535,5 @@ resetMario.addEventListener('click', resetaMario);
 resetEmpate.addEventListener('click', resetaEmpate);
 //buttonHelp.addEventListener
 //buttonInfo.addEventListener
+hellMode.addEventListener('click',INFERNO)
 aplicacao();

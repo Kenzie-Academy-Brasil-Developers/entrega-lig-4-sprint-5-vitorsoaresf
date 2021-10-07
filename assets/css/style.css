@@ -43,6 +43,9 @@ main{
     width: 100%;
     background-image: url(../img/Grama.png);
 }
+.box_tabuleiro.hell{
+    
+}
 .coluna{
     display: flex;
     flex-direction: column;
@@ -52,7 +55,6 @@ main{
     height: 60vh;
     /* background-color: #289DE3; */
     cursor: pointer;
-
 }
 
 .coluna:hover{
@@ -550,12 +552,18 @@ main{
     background-color: rgba(0, 0, 0, 0.9);
     font-size: 25px;
 }
-/* ERIVAN */
-
-
-
-/* ADNRE */
-
+/* HELL MODE */
+main.hell{
+    background-image: url(../img/hellmodewp.jpg);
+}
+.box_tabuleiro.hell{
+    background-image: none;
+    background-size: cover;
+}
+.linha.hell{
+    background-color: transparent;
+    border-color: #251200;
+}
 
 
 
