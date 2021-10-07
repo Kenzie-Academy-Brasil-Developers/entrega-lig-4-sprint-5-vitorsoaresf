@@ -29,6 +29,8 @@ const musicaVitoriaMario = document.getElementById('vitoriaMario');
 const musicaVitoriaSonic = document.getElementById('vitoriaSonic');
 const resetSonic = document.getElementById('botaoResetaSonic');
 const resetMario = document.getElementById('botaoResetaMario');
+const telaEmpate = document.getElementById('empate');
+const resetEmpate = document.getElementById('botaoResetEmpate');
 
 let isPlayer1 = true
 let objCol = {
@@ -398,7 +400,7 @@ function validaVitoria() {
     if (getPlayer() == 'Player1') {
         vitoriaSonic.style.display = 'block'
         main.style.display = 'none'
-        musicaDeFundo.pause(); 
+        musicaDeFundo.pause();
         musicaVitoriaSonic.play();
         musicaVitoriaSonic.loop = true;
         vozSonic.play();
@@ -439,7 +441,8 @@ function resetaSonic() {
     main.style.display = 'flex';
     
     novoJogo();
-
+    musicaDeFundo.currentTime = 0;
+    musicaDeFundo.play();
 }
 
 function resetaMario() {
@@ -468,6 +471,38 @@ function resetaMario() {
     main.style.display = 'flex';
     
     novoJogo();
+    musicaDeFundo.currentTime = 0;
+    musicaDeFundo.play();
+}
+
+function resetaEmpate() {
+    const linhas = document.getElementsByClassName('linha');
+    linhas.innerHTML = '';
+    box_time.innerHTML = '';
+    box_players.innerHTML = '';
+    box_tabuleiro.innerHTML = '';
+    
+    isPlayer1 = true
+    objCol = {
+        coluna0: 0,
+        coluna1: 0,
+        coluna2: 0,
+        coluna3: 0,
+        coluna4: 0,
+        coluna5: 0,
+        coluna6: 0
+    }
+    objDiscos = {}
+    playerNaoEstaJogando;
+    desseleciona = false;
+
+    clearInterval();
+    telaEmpate.style.display = 'none'
+    main.style.display = 'flex';
+    
+    novoJogo();
+    musicaDeFundo.currentTime = 0;
+    musicaDeFundo.play();
 
 }
 
@@ -479,6 +514,7 @@ botaoInicio.addEventListener('click', iniciar);
 buttonSound.addEventListener('click',soundToggle);
 resetSonic.addEventListener('click', resetaSonic);
 resetMario.addEventListener('click', resetaMario);
+resetEmpate.addEventListener('click', resetaEmpate);
 //buttonHelp.addEventListener
 //buttonInfo.addEventListener
 aplicacao();

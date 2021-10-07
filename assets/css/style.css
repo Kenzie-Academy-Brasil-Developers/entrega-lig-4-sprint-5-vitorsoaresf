@@ -478,6 +478,76 @@ main{
     padding: 10px;
     margin-top: 6%;
 }
+
+.empate {
+    background-image: url(../img/empatee.jpg);
+    height: 100vh;
+    background-size: 170vh;
+    display: none;
+    background-position: center;
+}
+.filhoEmpate {
+    background-color:rgba(0, 0, 0, 0.4);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.meioEmpate {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.filhoEmpate p {
+    font-family: 'Pixelar Regular', sans-serif;
+    color: white;
+    font-size: 25px;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 80%;
+    text-align: center;
+    padding: 10px;
+    border: 2px dotted white;
+    border-radius: 20px;
+    margin: 0px 0 20px 0;
+    max-width: 400px;
+}
+.filhoEmpate img {
+    height: 200px;
+    position: initial;
+    bottom: 0;
+}
+.marioCorredor {
+    height: 60px;
+    width: 60px;
+    display: flex;
+}
+.corredor img {
+    height: 50px;
+    width: 50px;
+    position: initial;
+}
+.filhoEmpate h2 {
+    margin-top: 10px;
+    font-size: 70px;
+    font-weight: 800;
+    text-align: center;
+    font-family: 'Pixelar Regular', sans-serif;
+    color: white;
+}
+.filhoEmpate button {
+    position: absolute;
+    bottom: 40px;
+    height: 70px;
+    width: 150px;
+    font-family: 'Pixelar Regular', sans-serif;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.9);
+    font-size: 25px;
+}
 /* ERIVAN */
 
 
@@ -560,6 +630,28 @@ main{
     }
     .filhoMario button {
         bottom: 90px;
+    }
+
+    .meioEmpate {
+        background-color: rgba(0, 0, 0, 0.5);
+        width: 500px;
+        border-radius: 25px;
+        justify-content: start;
+        height: 90%;
+    }
+    .filhoEmpate img {
+        height: 200px;
+        position: initial;
+    }
+    .corredor img {
+        height: 50px;
+        position: initial;
+    }
+    .filhoEmpate p {
+        margin: 0 0 8% 0;
+    }
+    .filhoEmpate button {
+        bottom: 10%;
     }
 }
 
