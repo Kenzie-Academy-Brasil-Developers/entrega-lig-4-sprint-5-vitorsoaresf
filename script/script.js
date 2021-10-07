@@ -8,22 +8,24 @@ const box_time = document.createElement('div');
 
 const botaoInicio = document.getElementById('botaoIniciar');
 const inicio = document.getElementById('paiInicio');
-const buttonSound = document.getElementById('buttonSound')
-const buttonHelp = document.getElementById('buttonHelp')
-const buttonInfo = document.getElementById('buttonInfo')
-const vitoriaSonic = document.getElementById('sonicGanha')
-const vitoriaMario = document.getElementById('marioGanha')
-const musicaAbertura = document.getElementById('musicaAberturaDeJogo')
-const musicaDeFundo = document.getElementById('musicaDeFundoJogo')
-const moedaDoMario = document.getElementById('moedaDoMario')
-const quedaMoeda = document.getElementById('quedaMoeda')
-const moedaDoSonic = document.getElementById('moedaDoSonic')
-const musicaEmpate = document.getElementById('musicaEmpate')
-const comecoDaPartida = document.getElementById('comecoDaPartida')
-const vozSonic = document.getElementById('vozSonic')
-const vozMario = document.getElementById('vozMario')
-const musicaVitoriaMario = document.getElementById('vitoriaMario')
-const musicaVitoriaSonic = document.getElementById('vitoriaSonic')
+const buttonSound = document.getElementById('buttonSound');
+const buttonHelp = document.getElementById('buttonHelp');
+const buttonInfo = document.getElementById('buttonInfo');
+const vitoriaSonic = document.getElementById('sonicGanha');
+const vitoriaMario = document.getElementById('marioGanha');
+const musicaAbertura = document.getElementById('musicaAberturaDeJogo');
+const musicaDeFundo = document.getElementById('musicaDeFundoJogo');
+const moedaDoMario = document.getElementById('moedaDoMario');
+const quedaMoeda = document.getElementById('quedaMoeda');
+const moedaDoSonic = document.getElementById('moedaDoSonic');
+const musicaEmpate = document.getElementById('musicaEmpate');
+const comecoDaPartida = document.getElementById('comecoDaPartida');
+const vozSonic = document.getElementById('vozSonic');
+const vozMario = document.getElementById('vozMario');
+const musicaVitoriaMario = document.getElementById('vitoriaMario');
+const musicaVitoriaSonic = document.getElementById('vitoriaSonic');
+const resetSonic = document.getElementById('botaoResetaSonic');
+const resetMario = document.getElementById('botaoResetaMario');
 
 let isPlayer1 = true
 let objCol = {
@@ -87,9 +89,12 @@ const addDisco = (event) => {
 
             celula.appendChild(disco);
             celula = col.children[col.children.length - objCol[idCol] - 1];
-            validaHorizontal(`disco${idCol[6]}${objCol[idCol]}`);
-            validaDiagonal(Number(idCol[6]), objCol[idCol])
-            validaVertical(Number(idCol[6]), objCol[idCol]);
+            if (validaHorizontal(`disco${idCol[6]}${objCol[idCol]}`) || 
+                validaDiagonal(Number(idCol[6]), objCol[idCol]) ||
+                validaVertical(Number(idCol[6]), objCol[idCol])
+            ) {
+                validaVitoria();
+            }
             mudaPlayer();
         }
     }
@@ -380,7 +385,6 @@ const iniciar = () => {
 }
 
 function validaVitoria() {
-
     if (getPlayer() == 'Player1') {
         vitoriaSonic.style.display = 'block'
         main.style.display = 'none'
@@ -399,12 +403,20 @@ function validaVitoria() {
     }
 }
 
+function resetaSonic() {
+    main.innerHTML = '';
+    clearInterval()
+    vitoriaSonic.style.display = 'none'
+    novoJogo();
+}
+
 
 // EVENTOS
 
 main.addEventListener('click', addDisco);
 botaoInicio.addEventListener('click', iniciar);
-buttonSound.addEventListener('click',soundToggle)
+buttonSound.addEventListener('click',soundToggle);
+resetSonic.addEventListener('click', resetaSonic);
 //buttonHelp.addEventListener
 //buttonInfo.addEventListener
 aplicacao();
