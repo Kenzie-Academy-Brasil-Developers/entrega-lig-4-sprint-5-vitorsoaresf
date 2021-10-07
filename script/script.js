@@ -100,8 +100,17 @@ const addDisco = (event) => {
             }
             mudaPlayer();
         }
+        if(objCol.coluna0===6&&
+           objCol.coluna1===6&&
+           objCol.coluna2===6&&
+           objCol.coluna3===6&&
+           objCol.coluna4===6&&
+           objCol.coluna5===6&&
+           objCol.coluna6===6
+        ){
+            console.log("Empate")
+        }
     }
-
     playerNaoEstaJogando = setInterval(() => {
         desselecionaJogador();
         mudaPlayer();
