@@ -221,9 +221,11 @@ main{
 /* DANIEL */
 
 .paiInicio {
-    background-image: url(../img/backinicio.jpg);
-    background-size: 100%;
+    background-image: url(../img/init.jpg);
+    background-size: 178vh;
+    background-position: center;
     height: 100vh; 
+    display: block;
 }
 .filhoInicio {
     background-color:rgba(0, 0, 0, 0.6);
@@ -232,8 +234,18 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+}
+.meiuca {
+    background-color:transparent;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .filhoInicio h1 {
+    margin-top: 20px;
     font-size: 70px;
     font-weight: 800;
     text-align: center;
@@ -251,6 +263,7 @@ main{
     border: 2px dotted white;
     border-radius: 20px;
     margin: 50px 0 80px 0;
+    max-width: 460px;
 }
 .filhoInicio button {
     background-color: rgba(218, 21, 21, 0.788);
@@ -283,8 +296,188 @@ main{
     height: 130px;
     background-color: rgba(172, 171, 171, 0.685);
 }
+.paiSonic {
+    background-image: url(../img/greenzone.png);
+    height: 100vh;
+    background-size: 205vh;
+    display: none;
+}
+.filhoSonic {
+    background-color:rgba(0, 0, 0, 0.4);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.meioSonic {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.filhoSonic p {
+    font-family: 'Pixelar Regular', sans-serif;
+    color: white;
+    font-size: 25px;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 80%;
+    text-align: center;
+    padding: 10px;
+    border: 2px dotted white;
+    border-radius: 20px;
+    margin: 0px 0 80px 0;
+    max-width: 400px;
+}
+.filhoSonic img {
+    height: 300px;
+    position: absolute;
+    bottom: 0;
+}
+.sonicCorredor {
+    height: 60px;
+    width: 60px;
+    display: flex;
+}
+.sonicCorredor img {
+    height: 50px;
+    position: initial;
+}
+.filhoSonic h2 {
+    margin-top: 20px;
+    font-size: 70px;
+    font-weight: 800;
+    text-align: center;
+    font-family: 'Pixelar Regular', sans-serif;
+    color: white;
+}
+.filhoSonic button {
+    position: absolute;
+    bottom: 40px;
+    height: 70px;
+    width: 150px;
+    font-family: 'Pixelar Regular', sans-serif;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.9);
+    font-size: 25px;
+}
 
+.paiMario {
+    background-image: url(../img/mariofundo.png);
+    height: 100vh;
+    background-size: 170vh;
+    display: none;
+    background-position: center;
+}
+.filhoMario {
+    background-color:rgba(0, 0, 0, 0.4);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.meioMario {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.filhoMario p {
+    font-family: 'Pixelar Regular', sans-serif;
+    color: white;
+    font-size: 25px;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 80%;
+    text-align: center;
+    padding: 10px;
+    border: 2px dotted white;
+    border-radius: 20px;
+    margin: 0px 0 80px 0;
+    max-width: 400px;
+}
+.filhoMario img {
+    height: 300px;
+    position: absolute;
+    bottom: 0;
+}
+.marioCorredor {
+    height: 60px;
+    width: 60px;
+    display: flex;
+}
+.marioCorredor img {
+    height: 50px;
+    width: 50px;
+    position: initial;
+}
+.filhoMario h2 {
+    margin-top: 10px;
+    font-size: 70px;
+    font-weight: 800;
+    text-align: center;
+    font-family: 'Pixelar Regular', sans-serif;
+    color: white;
+}
+.filhoMario button {
+    position: absolute;
+    bottom: 40px;
+    height: 70px;
+    width: 150px;
+    font-family: 'Pixelar Regular', sans-serif;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.9);
+    font-size: 25px;
+}
 
+.regras {
+    background-image: url(../img/rules.jpg);
+    height: 100vh;
+    background-size: 112vw;
+    display: none;
+}
+.filhoRegras {
+    background-color:rgba(0, 0, 0, 0.5);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.filhoRegras h2 {
+    text-align: center;
+    color: white;
+    font-family: 'Pixelar Regular', sans-serif;
+    font-size: 50px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.filhoRegras p {
+    text-align: center;
+    font-family: 'Pixelar Regular', sans-serif;
+    color: white;
+    font-size: 25px;
+    padding: 10px;
+}
+.netoRegras {
+    border: 2px dotted white;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 90%;
+    max-width: 656px;
+}
+.botaoRegras {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    font-family: 'Pixelar Regular', sans-serif;
+    font-size: 25px;
+    padding: 10px;
+    margin-top: 6%;
+}
 /* ERIVAN */
 
 
@@ -309,6 +502,64 @@ main{
     .discoPlayer2{
         width: 80%;
         height: 80%;
+    }
+    /* Daniel */
+    .regras {
+        background-image: url(../img/rules768.jpg);
+        background-size: 200vh;
+    }
+    .meiuca {
+        background-color: rgba(0, 0, 0, 0.5);
+        width: 500px;
+        border-radius: 25px;
+        justify-content: center;
+        height: 80%;
+    }
+    .meiuca h1 {
+        margin-top: 0;
+    }
+    .meioSonic {
+        background-color: rgba(0, 0, 0, 0.5);
+        width: 500px;
+        border-radius: 25px;
+        justify-content: start;
+        height: 90%;
+    }
+    .filhoSonic img {
+        height: 300px;
+        position: initial;
+    }
+    .sonicCorredor img {
+        height: 50px;
+        position: initial;
+    }
+    .filhoSonic p {
+        margin: 0;
+    }
+    .filhoSonic button {
+        bottom: 90px;
+    }
+
+    .meioMario {
+        background-color: rgba(0, 0, 0, 0.5);
+        width: 500px;
+        border-radius: 25px;
+        justify-content: start;
+        height: 90%;
+    }
+    .filhoMario img {
+        height: 300px;
+        position: initial;
+    }
+    .marioCorredor img {
+        height: 50px;
+        position: initial;
+    }
+    .filhoMario p {
+        margin: 0;
+    }
+    .filhoMario button {
+        bottom: 90px;
     }
 }
 

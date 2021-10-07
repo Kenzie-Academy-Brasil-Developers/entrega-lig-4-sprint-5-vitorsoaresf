@@ -11,6 +11,8 @@ const inicio = document.getElementById('paiInicio');
 const buttonSound = document.getElementById('buttonSound')
 const buttonHelp = document.getElementById('buttonHelp')
 const buttonInfo = document.getElementById('buttonInfo')
+const vitoriaSonic = document.getElementById('sonicGanha')
+const vitoriaMario = document.getElementById('marioGanha')
 
 let isPlayer1 = true
 let objCol = {
@@ -347,6 +349,18 @@ const iniciar = () => {
         inicio.style.display = 'none';
         main.style.display = 'flex'
     }, 3000);
+}
+
+function validaVitoria() {
+
+    if (getPlayer() == 'Player1') {
+        vitoriaSonic.style.display = 'block'
+        main.style.display = 'none' 
+    }
+    if (getPlayer() == 'Player2') {
+        vitoriaMario.style.display = 'block'
+        main.style.display = 'none' 
+    }
 }
 
 
