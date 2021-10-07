@@ -4,8 +4,26 @@ const main = document.getElementById('app');
 const box_tabuleiro = document.createElement('div');
 box_tabuleiro.classList.add('box_tabuleiro');
 main.appendChild(box_tabuleiro);
+const box_time = document.createElement('div');
+
 const botaoInicio = document.getElementById('botaoIniciar');
 const inicio = document.getElementById('paiInicio');
+const buttonSound = document.getElementById('buttonSound')
+const buttonHelp = document.getElementById('buttonHelp')
+const buttonInfo = document.getElementById('buttonInfo')
+const vitoriaSonic = document.getElementById('sonicGanha')
+const vitoriaMario = document.getElementById('marioGanha')
+const musicaAbertura = document.getElementById('musicaAberturaDeJogo')
+const musicaDeFundo = document.getElementById('musicaDeFundoJogo')
+const moedaDoMario = document.getElementById('moedaDoMario')
+const quedaMoeda = document.getElementById('quedaMoeda')
+const moedaDoSonic = document.getElementById('moedaDoSonic')
+const musicaEmpate = document.getElementById('musicaEmpate')
+const comecoDaPartida = document.getElementById('comecoDaPartida')
+const vozSonic = document.getElementById('vozSonic')
+const vozMario = document.getElementById('vozMario')
+const musicaVitoriaMario = document.getElementById('vitoriaMario')
+const musicaVitoriaSonic = document.getElementById('vitoriaSonic')
 
 let isPlayer1 = true
 let objCol = {
@@ -17,6 +35,7 @@ let objCol = {
     coluna5: 0,
     coluna6: 0
 }
+let soundOn = true
 
 let objDiscos = {}
 let playerNaoEstaJogando;
@@ -26,8 +45,11 @@ let desseleciona = false;
 
 // FUNÇÕES
 
+
 const aplicacao = () => {
-    novoJogo();
+    musicaAbertura.play()
+    musicaAbertura.loop = true
+    novoJogo();    
 }
 
 const addDisco = (event) => {
@@ -38,12 +60,13 @@ const addDisco = (event) => {
     if (col === null || col === undefined) {
         return
     }
-        
+
     desselecionaJogador();
 
     const idCol = col.id;
     if (objCol[idCol] === 6) {
         negaMovimento();
+        mudaPlayer();
     } else {
         permiteMovimento();
         let celula = col.children[col.children.length - objCol[idCol] - 1];
@@ -54,10 +77,12 @@ const addDisco = (event) => {
                 disco.classList.add('discoPlayer1');
                 disco.id = 'discoPlayer1';
                 objDiscos[`disco${idCol[6]}${objCol[idCol]}`] = "Player1"
+                moedaDoSonic.play()
             } else {
                 disco.classList.add('discoPlayer2');
                 disco.id = 'discoPlayer2';
                 objDiscos[`disco${idCol[6]}${objCol[idCol]}`] = "Player2"
+                moedaDoMario.play()
             }
 
             celula.appendChild(disco);
@@ -69,10 +94,10 @@ const addDisco = (event) => {
         }
     }
 
-    playerNaoEstaJogando = setInterval(() =>{
+    playerNaoEstaJogando = setInterval(() => {
         desselecionaJogador();
         mudaPlayer();
-    }, 3000);
+    }, 15000);
 
 }
 
@@ -96,20 +121,47 @@ const criarColuna = (id, id1) => {
     }
 }
 
-const desselecionaJogador = () =>{
+const desselecionaJogador = () => {
     const p1 = document.getElementById('p1');
     const p2 = document.getElementById('p2');
-
-    if(isPlayer1){
+    
+    if(box_time.childElementCount !== 0){
+        box_time.removeChild(document.getElementById("time"));
+    }
+    
+    const divTime = document.createElement('div');
+    divTime.id = 'time';
+    divTime.style.position = 'absolute';
+    box_time.appendChild(divTime);
+    
+    
+    if (isPlayer1) {
         p1.classList.toggle('player_desselecionado');
-        if(desseleciona){
+        divTime.classList.add('estilo_time1');
+        if (desseleciona) {
             p2.classList.toggle('player_desselecionado');
             bool = false
         }
-    }else{
+    } else {
         p2.classList.toggle('player_desselecionado');
         p1.classList.toggle('player_desselecionado');
+        divTime.classList.add('estilo_time2');
         desseleciona = true;
+    }
+}
+
+function soundToggle(){
+    soundOn = !soundOn
+    if(soundOn){
+        buttonSound.innerHTML='<i class="fas fa-volume-up"></i>'
+        musicaDeFundo.play()
+        moedaDoMario.volume = 1
+        moedaDoSonic.volume = 1
+    }else{
+        buttonSound.innerHTML='<i class="fas fa-volume-mute"></i>'
+        musicaDeFundo.pause()
+        moedaDoMario.volume = 0
+        moedaDoSonic.volume = 0
     }
 }
 
@@ -208,6 +260,11 @@ const criaFeedbackJogadorCorrente = () => {
     main.insertBefore(box_players, main.firstChild);
 }
 
+const criaTime = () => {
+    box_time.classList.add('box_time');
+    main.insertBefore(box_time, main.firstChild);
+}
+
 const mudaPlayer = () => {
     isPlayer1 = !isPlayer1
 }
@@ -219,8 +276,7 @@ const negaMovimento = () => {
     setTimeout(() => app.removeChild(divNaoInsere), 2000);
 }
 
-const novoJogo = () => {
-    
+const novoJogo = () => {    
     box_tabuleiro.style.width = '100%';
     for (let i = 0; i <= 6; i++) {
         let l = []
@@ -232,8 +288,11 @@ const novoJogo = () => {
             l.push(newI + newJ)
         }
         criarColuna(i, l)
-    }
+    }    
+    criaTime();
     criaFeedbackJogadorCorrente();
+    musicaVitoriaMario.pause();
+    musicaVitoriaSonic.pause();    
 }
 
 const permiteMovimento = () => {
@@ -289,7 +348,7 @@ const validaHorizontal = (posicao) => {
 const validaVertical = (x, y) => {
     if (objDiscos[`disco${x}${y}`] === getPlayer() && objDiscos[`disco${x}${y - 1}`] === getPlayer() &&
         objDiscos[`disco${x}${y - 2}`] === getPlayer() && objDiscos[`disco${x}${y - 3}`] === getPlayer()) {
-            console.log('ganhou')
+        console.log('ganhou')
         return true
     }
     return false
@@ -308,10 +367,36 @@ const validaDiagonal = (x, y) => {
 }
 
 const iniciar = () => {
-    setTimeout(function(){ 
-    inicio.style.display = 'none';
-    main.style.display = 'flex' 
+    setTimeout(function () {
+        inicio.style.display = 'none';
+        main.style.display = 'flex'
+        comecoDaPartida.play();
+        musicaDeFundo.play();
+        musicaDeFundo.loop = true;
     }, 3000);
+    
+    musicaAbertura.pause();
+    quedaMoeda.play();    
+}
+
+function validaVitoria() {
+
+    if (getPlayer() == 'Player1') {
+        vitoriaSonic.style.display = 'block'
+        main.style.display = 'none'
+        musicaDeFundo.pause(); 
+        musicaVitoriaSonic.play();
+        musicaVitoriaSonic.loop = true;
+        vozSonic.play();
+    }
+    if (getPlayer() == 'Player2') {
+        vitoriaMario.style.display = 'block'
+        main.style.display = 'none'
+        musicaDeFundo.pause();
+        musicaVitoriaMario.play();
+        musicaVitoriaMario.loop = true;
+        vozMario.play(); 
+    }
 }
 
 
@@ -319,5 +404,7 @@ const iniciar = () => {
 
 main.addEventListener('click', addDisco);
 botaoInicio.addEventListener('click', iniciar);
-
+buttonSound.addEventListener('click',soundToggle)
+//buttonHelp.addEventListener
+//buttonInfo.addEventListener
 aplicacao();

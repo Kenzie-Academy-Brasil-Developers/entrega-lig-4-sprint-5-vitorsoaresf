@@ -13,29 +13,87 @@
 <body>
     <div class="paiInicio" id="paiInicio">
         <div class="filhoInicio">
-            <h1>Super Lig-4</h1>
-            <p>Alie-se a um dos guerreiros para conquistar as 4 moedas celestiais de seu universo
-               para adquirir um poder imensurável, apenas um dos jogadores pode vencer esta batalha,
-               você está preparado?
-            </p>
-            <div class="insertCoin">
-            <button id="botaoIniciar">Inserir coin</button>
-            <div class="div1"><div class="div2"></div></div>
+            <div class="meiuca">
+                <h1>Super Lig-4</h1>
+                <p>
+                    Alie-se a um dos guerreiros para conquistar as 4 moedas celestiais de seu universo
+                    para adquirir um poder imensurável, apenas um dos jogadores pode vencer esta batalha,
+                    você está preparado?
+                </p>
+                <div class="insertCoin">
+                <button id="botaoIniciar">Insert coin</button>
+                <div class="div1"><div class="div2"></div></div>
+                </div>
             </div>
         </div>
     </div>
-    <main id='app'></main>
-    <audio src='assets/musicas para o jogo/Super Street Fighter II OST Guile Them.mp3' id='musicaAberturaDeJogo'></audio>
-    <audio src="assets/musicas para o jogo/sound1.mp3" id='musicaDeFundoJogo'></audio>
-    <audio src="assets/musicas para o jogo/MOEDA DO MARIO (SOM) Coin   DkPlay.mp3" id='moedaDoMario'></audio>
-    <audio src="assets/musicas para o jogo/SOM efeito sonoro som  DA MOEDA 1 Real Caindo No (Chão)   VOLUME  (ALTO.mp3" id='quedaMoeda'></audio>
-    <audio src="assets/musicas para o jogo/Sonic Ring Sound Effec.mp3" id='moedaDoSonic'></audio>
-    <audio src='assets/musicas para o jogo/PacMan Dying Sound Effec.mp3' id='musicaEmpate'></audio>  
-    <audio src="assets/musicas para o jogo/here we go.mp3" id='comecoDaPartida'></audio>
-    <audio src="assets/musicas para o jogo/i am sonic.mp3" id='vozSonic'></audio>
-    <audio src="assets/musicas para o jogo/its me mario.mp3" id='vozMario'></audio>
-    <audio src="assets/musicas para o jogo/Sonic victory.mp3" id ='vitoriaSonic'></audio>
-    <audio src="assets/musicas para o jogo/vitoria mario.mp3" id='vitoriaMario'></audio>
+    <main id='app'>
+        <div id="buttonBar">
+            <div id="buttonSound"><i class="fas fa-volume-up"></i></div>
+            <div id="buttonHelp"><i class="fas fa-question"></i></div>
+            <div id="buttonInfo"><i class="fas fa-info"></i></div>
+        </div>
+    </main>
+    <div class="paiSonic" id="sonicGanha">
+        <div class="filhoSonic">
+            <div class="meioSonic">
+                <h2>You Win!</h2>
+                <div class="sonicCorredor"><img src="assets/img/3F3F.gif" alt="" srcset="" class="sonicCorredor"></div>
+                <p>
+                    Você é demais, agora com o poder das 4 moedas celestiais poderei voltar ao meu 
+                    universo e derrotar o Dr. Eggman.
+                </p>
+                <img src="assets/img/9584.gif" alt="" srcset="">
+                <button id="botaoResetaSonic">Jogar novamente</button>
+            </div>
+        </div>
+    </div>
+    <div class="paiMario" id="marioGanha">
+        <div class="filhoMario">
+            <div class="meioMario">
+                <h2>You Win!</h2>
+                <div class="marioCorredor"><img src="assets/img/mario-gif.gif" alt="" srcset="" class="marioCorredor"></div>
+                <p>
+                    Mamma mia! Agora com o poder das 4 moedas celestiais poderei voltar ao meu 
+                    universo, derrotar o Bowser e salvar a princesa Peach.
+                </p>
+                <img src="assets/img/source.gif" alt="" srcset="">
+                <button id="botaoResetaMario">Jogar novamente</button>
+            </div>
+        </div>
+    </div>
+    <div class="regras" id="regras">
+        <div class="filhoRegras">
+            <h2>Regras do Jogo</h2>
+            <div class="netoRegras">
+                <p>
+                    No Super Lig-4, o primeiro jogador lutará ao lado de Sonic e o outro ao lado de Mario.
+                </p>
+                <p>
+                    Os jogadores se alternam a cada jogada inserindo a moeda celestial de seu guerreiro em 
+                    qualquer das 7 colunas.
+                </p>
+                <p>
+                    O primeiro jogador que conseguir acumular 4 moedas celestiais em sequência vence o jogo 
+                    (a sequência pode ser na horizontal, vertical ou diagonal).
+                </p>
+            </div>
+            <button class="botaoRegras">Voltar ao Jogo</button>
+        </div>
+    </div>
+    <div class='sounds'>
+        <audio src='assets/musicas para o jogo/Super Street Fighter II OST Guile Them.mp3' id='musicaAberturaDeJogo' allow='autoplay'></audio>
+        <audio src="assets/musicas para o jogo/sound1.mp3" id='musicaDeFundoJogo'></audio>
+        <audio src="assets/musicas para o jogo/MOEDA DO MARIO (SOM) Coin   DkPlay.mp3" id='moedaDoMario'></audio>
+        <audio src="assets/musicas para o jogo/SOM efeito sonoro som  DA MOEDA 1 Real Caindo No (Chão)   VOLUME  (ALTO.mp3" id='quedaMoeda'></audio>
+        <audio src="assets/musicas para o jogo/Sonic Ring Sound Effec.mp3" id='moedaDoSonic'></audio>
+        <audio src='assets/musicas para o jogo/PacMan Dying Sound Effec.mp3' id='musicaEmpate'></audio>  
+        <audio src="assets/musicas para o jogo/here we go.mp3" id='comecoDaPartida'></audio>
+        <audio src="assets/musicas para o jogo/i am sonic.mp3" id='vozSonic'></audio>
+        <audio src="assets/musicas para o jogo/its me mario.mp3" id='vozMario'></audio>
+        <audio src="assets/musicas para o jogo/Sonic victory.mp3" id ='vitoriaSonic'></audio>
+        <audio src="assets/musicas para o jogo/vitoria mario.mp3" id='vitoriaMario'></audio>
+    </div>
     <script src="script/script.js"></script>
 </body>
 </html>
