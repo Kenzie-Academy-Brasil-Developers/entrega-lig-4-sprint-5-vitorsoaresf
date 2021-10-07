@@ -6,6 +6,9 @@ box_tabuleiro.classList.add('box_tabuleiro');
 main.appendChild(box_tabuleiro);
 const box_time = document.createElement('div');
 
+const box_players = document.createElement('div');
+box_players.classList.add('box_players');
+
 const botaoInicio = document.getElementById('botaoIniciar');
 const inicio = document.getElementById('paiInicio');
 const buttonSound = document.getElementById('buttonSound');
@@ -249,9 +252,7 @@ const getPlayer = () => {
 const criaFeedbackJogadorCorrente = () => {
     const player1 = document.createElement('div');
     const player2 = document.createElement('div');
-    const box_players = document.createElement('div');
 
-    box_players.classList.add('box_players');
     player1.classList.add('player1');
     player2.classList.add('player2');
 
@@ -404,10 +405,61 @@ function validaVitoria() {
 }
 
 function resetaSonic() {
-    main.innerHTML = '';
-    clearInterval()
+    const linhas = document.getElementsByClassName('linha');
+    linhas.innerHTML = '';
+    box_time.innerHTML = '';
+    box_players.innerHTML = '';
+    box_tabuleiro.innerHTML = '';
+    
+    isPlayer1 = true
+    objCol = {
+        coluna0: 0,
+        coluna1: 0,
+        coluna2: 0,
+        coluna3: 0,
+        coluna4: 0,
+        coluna5: 0,
+        coluna6: 0
+    }
+    objDiscos = {}
+    playerNaoEstaJogando;
+    desseleciona = false;
+
+    clearInterval();
     vitoriaSonic.style.display = 'none'
+    main.style.display = 'flex';
+    
     novoJogo();
+
+}
+
+function resetaMario() {
+    const linhas = document.getElementsByClassName('linha');
+    linhas.innerHTML = '';
+    box_time.innerHTML = '';
+    box_players.innerHTML = '';
+    box_tabuleiro.innerHTML = '';
+    
+    isPlayer1 = true
+    objCol = {
+        coluna0: 0,
+        coluna1: 0,
+        coluna2: 0,
+        coluna3: 0,
+        coluna4: 0,
+        coluna5: 0,
+        coluna6: 0
+    }
+    objDiscos = {}
+    playerNaoEstaJogando;
+    desseleciona = false;
+
+    clearInterval();
+    vitoriaMario.style.display = 'none'
+    main.style.display = 'flex';
+    
+    novoJogo();
+
 }
 
 
@@ -417,6 +469,7 @@ main.addEventListener('click', addDisco);
 botaoInicio.addEventListener('click', iniciar);
 buttonSound.addEventListener('click',soundToggle);
 resetSonic.addEventListener('click', resetaSonic);
+resetMario.addEventListener('click', resetaMario);
 //buttonHelp.addEventListener
 //buttonInfo.addEventListener
 aplicacao();
