@@ -218,3 +218,48 @@ main{
 
 
 /* VITOR */
+
+/* TEMPO PARA A JOGADA DO PLAYER */
+
+.box_time{
+    width: 100vw;
+    height: 10px;
+    background-color: #289DE3;
+}
+
+.estilo_time1{
+    width: 100vw;
+    height: 10px;
+    background-color: #A42C1E;
+    animation-name: time1;
+    animation-duration: 15s;
+}
+
+.estilo_time2{
+    width: 100vw;
+    height: 10px;
+    background-color: #ffca00;
+    animation-name: time2;
+    animation-duration: 15s;
+}
+
+
+
+
+@keyframes time1 {
+    0%{
+        margin-left: -100vw;
+    }
+    100%{
+        margin-left: 0px;
+    }
+}
+
+@keyframes time2 {
+    0%{
+        margin-left: -100vw;
+    }
+    100%{
+        margin-left: 0px;
+    }
+}
