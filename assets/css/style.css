@@ -1,4 +1,4 @@
-@import url(//db.onlinewebfonts.com/c/b2e75c336df191233b3096682c9ee6be?family=PixelarRegularW01-Regular);
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 /* VITOR */
 
@@ -308,16 +308,16 @@ main{
 }
 .filhoInicio h1 {
     margin-top: 20px;
-    font-size: 70px;
+    font-size: 35px;
     font-weight: 800;
     text-align: center;
-    font-family: "PixelarRegularW01-Regular";
+    font-family: 'Press Start 2P', cursive;
     color: white;
 }
 .filhoInicio p {
-    font-family: "PixelarRegularW01-Regular";
+    font-family: 'Press Start 2P', cursive;
     color: white;
-    font-size: 25px;
+    font-size: 15px;
     background-color: rgba(0, 0, 0, 0.6);
     width: 80%;
     text-align: center;
