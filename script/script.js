@@ -110,8 +110,7 @@ const addDisco = (event) => {
            objCol.coluna5===6&&
            objCol.coluna6===6
         ){
-            telaEmpate.style.display = 'block'
-            main.style.display = 'none'
+            validaEmpate();
         }
     }
     playerNaoEstaJogando = setInterval(() => {
@@ -414,6 +413,12 @@ function validaVitoria() {
         musicaVitoriaMario.loop = true;
         vozMario.play(); 
     }
+}
+function validaEmpate () {
+    telaEmpate.style.display = 'block'
+    main.style.display = 'none'
+    musicaDeFundo.pause();
+    musicaEmpate.play();
 }
 
 function resetaSonic() {
