@@ -524,3 +524,31 @@ resetEmpate.addEventListener('click', resetaEmpate);
 //buttonHelp.addEventListener
 //buttonInfo.addEventListener
 aplicacao();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const info = document.getElementById('info')
+const voltarInfo = document.getElementById('voltarInfo')
+
+voltarInfo.addEventListener('click', voltarDaInfo)
+
+function voltarDaInfo () {
+    main.style.display = 'flex'
+    info.style.display = 'none'
+}
