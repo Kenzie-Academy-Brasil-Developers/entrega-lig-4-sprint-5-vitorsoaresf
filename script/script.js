@@ -530,6 +530,8 @@ function INFERNO() {
     musicaVitoriaMario.src = "assets/musicas para o jogo/Música Angelica.mp3"
     vozMario.src = ""
     vozSonic.src = "assets/musicas para o jogo/nicolau.mp3"
+    moedaDoMario.src = 'assets/musicas para o jogo/bola de fogo.mp3'
+    moedaDoSonic.src = 'assets/musicas para o jogo/bola de fogo.mp3'
 }
 
 
