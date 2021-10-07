@@ -108,6 +108,7 @@ const desselecionaJogador = () => {
     
     const divTime = document.createElement('div');
     divTime.id = 'time';
+    divTime.style.position = 'absolute';
     box_time.appendChild(divTime);
     
     

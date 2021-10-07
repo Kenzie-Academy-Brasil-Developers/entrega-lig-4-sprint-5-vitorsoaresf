@@ -182,10 +182,10 @@ main{
 
 @keyframes time2 {
     0%{
-        margin-left: 100vw;
+        margin-left: -100vw;
     }
     100%{
-        margin-left: 0px;
+        margin-left: 0vw;
     }
 }
 
