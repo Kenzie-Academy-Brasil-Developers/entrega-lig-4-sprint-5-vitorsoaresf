@@ -194,7 +194,6 @@ function soundToggle() {
 }
 
 const sincronizaAnimacoes = () => {
-    console.log(paiDiscosAdd)
 
     for (let i = 0; i < paiDiscosAdd.length;i++){
         if (paiDiscosAdd[i].id === 'discoPlayer1') {

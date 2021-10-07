@@ -332,9 +332,9 @@ main{
     color: #fff;
     height: 100px;
     width: 100px;
-    font-size: 25px;
+    font-size: 12px;
     border-radius: 100%;
-    font-family: 'Pixelar Regular', sans-serif;
+    font-family: 'Press Start 2P', cursive;
 }
 .filhoInicio .div1 {
     background-color: gray;
@@ -381,9 +381,9 @@ main{
     align-items: center;
 }
 .filhoSonic p {
-    font-family: 'Pixelar Regular', sans-serif;
+    font-family: 'Press Start 2P', cursive;
     color: white;
-    font-size: 25px;
+    font-size: 12px;
     background-color: rgba(0, 0, 0, 0.7);
     width: 80%;
     text-align: center;
@@ -409,10 +409,10 @@ main{
 }
 .filhoSonic h2 {
     margin-top: 20px;
-    font-size: 70px;
+    font-size: 35px;
     font-weight: 800;
     text-align: center;
-    font-family: 'Pixelar Regular', sans-serif;
+    font-family: 'Press Start 2P', cursive;
     color: white;
 }
 .filhoSonic button {
@@ -420,17 +420,17 @@ main{
     bottom: 40px;
     height: 70px;
     width: 150px;
-    font-family: 'Pixelar Regular', sans-serif;
+    font-family: 'Press Start 2P', cursive;
     color: white;
     background-color: rgba(0, 0, 0, 0.9);
-    font-size: 25px;
+    font-size: 12px;
     border-radius: 20px;
 }
 
 .paiMario {
     background-image: url(../img/mariofundo.png);
     height: 100vh;
-    background-size: 170vh;
+    background-size: cover;
     display: none;
     background-position: center;
 }
@@ -451,9 +451,9 @@ main{
     align-items: center;
 }
 .filhoMario p {
-    font-family: 'Pixelar Regular', sans-serif;
+    font-family: 'Press Start 2P', cursive;
     color: white;
-    font-size: 25px;
+    font-size: 12px;
     background-color: rgba(0, 0, 0, 0.7);
     width: 80%;
     text-align: center;
@@ -480,10 +480,10 @@ main{
 }
 .filhoMario h2 {
     margin-top: 10px;
-    font-size: 70px;
+    font-size: 35px;
     font-weight: 800;
     text-align: center;
-    font-family: 'Pixelar Regular', sans-serif;
+    font-family: 'Press Start 2P', cursive;
     color: white;
 }
 .filhoMario button {
@@ -491,10 +491,10 @@ main{
     bottom: 40px;
     height: 70px;
     width: 150px;
-    font-family: 'Pixelar Regular', sans-serif;
+    font-family: 'Press Start 2P', cursive;
     color: white;
     background-color: rgba(0, 0, 0, 0.9);
-    font-size: 25px;
+    font-size: 12px;
     border-radius: 20px;
 }
 
@@ -515,16 +515,16 @@ main{
 .filhoRegras h2 {
     text-align: center;
     color: white;
-    font-family: 'Pixelar Regular', sans-serif;
-    font-size: 50px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 25px;
     margin-top: 30px;
     margin-bottom: 30px;
 }
 .filhoRegras p {
     text-align: center;
-    font-family: 'Pixelar Regular', sans-serif;
+    font-family: 'Press Start 2P', cursive;
     color: white;
-    font-size: 25px;
+    font-size: 12px;
     padding: 10px;
 }
 .netoRegras {
@@ -537,8 +537,8 @@ main{
 .botaoRegras {
     background-color: rgba(0, 0, 0, 0.8);
     color: white;
-    font-family: 'Pixelar Regular', sans-serif;
-    font-size: 25px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
     padding: 10px;
     margin-top: 6%;
     border-radius: 20px;
@@ -568,9 +568,9 @@ main{
     align-items: center;
 }
 .filhoEmpate p {
-    font-family: 'Pixelar Regular', sans-serif;
+    font-family: 'Press Start 2P', cursive;
     color: white;
-    font-size: 25px;
+    font-size: 12px;
     background-color: rgba(0, 0, 0, 0.7);
     width: 80%;
     text-align: center;
@@ -597,10 +597,10 @@ main{
 }
 .filhoEmpate h2 {
     margin-top: 10px;
-    font-size: 70px;
+    font-size: 35px;
     font-weight: 800;
     text-align: center;
-    font-family: 'Pixelar Regular', sans-serif;
+    font-family: 'Press Start 2P', cursive;
     color: white;
 }
 .filhoEmpate button {
@@ -608,10 +608,10 @@ main{
     bottom: 40px;
     height: 70px;
     width: 150px;
-    font-family: 'Pixelar Regular', sans-serif;
+    font-family: 'Press Start 2P', cursive;
     color: white;
     background-color: rgba(0, 0, 0, 0.9);
-    font-size: 25px;
+    font-size: 12px;
     border-radius: 20px;
 }
 /* ERIVAN */
@@ -641,9 +641,9 @@ main{
     max-width: 540px;
 }
 .filhoInfo a {
-    font-family: 'Pixelar Regular', sans-serif;
+    font-family: 'Press Start 2P', cursive;
     color: white;
-    font-size: 25px;
+    font-size: 12px;
     background-color: rgba(0, 0, 0, 0.7);
     width: 80%;
     text-align: center;
@@ -659,19 +659,19 @@ main{
 }
 .filhoInfo h2 {
     margin-top: 20px;
-    font-size: 50px;
+    font-size: 25px;
     font-weight: 800;
     text-align: center;
-    font-family: 'Pixelar Regular', sans-serif;
+    font-family: 'Press Start 2P', cursive;
     color: white;
 }
 .filhoInfo button {
     height: 60px;
     width: 150px;
-    font-family: 'Pixelar Regular', sans-serif;
+    font-family: 'Press Start 2P', cursive;
     color: white;
     background-color: rgba(0, 0, 0, 0.9);
-    font-size: 25px;
+    font-size: 12px;
     margin-top: 20px;
     border-radius: 20px;
 }
@@ -679,9 +679,9 @@ main{
 /* ADNRE */
 
 .infoFoto h3 {
-    font-family: 'Pixelar Regular', sans-serif;
+    font-family: 'Press Start 2P', cursive;
     color: white;
-    font-size: 25px;
+    font-size: 12px;
     margin-bottom: 15px;
 }
 .infoFoto {
