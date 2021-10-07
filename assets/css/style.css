@@ -41,6 +41,7 @@ main{
 .box_tabuleiro{
     display: flex;
     width: 100%;
+    background-image: url(../img/Grama.png);
 }
 .coluna{
     display: flex;
@@ -49,7 +50,7 @@ main{
     justify-content: space-around;
     width: 14.3%;
     height: 60vh;
-    background-color: #289DE3;
+    /* background-color: #289DE3; */
     cursor: pointer;
 
 }
@@ -63,8 +64,8 @@ main{
     height: 40px;
     display: flex;
     justify-content: center;
-    background-color: #03406C;
-    border: 2px ridge #61b9ec;
+    background-color: #050;
+    border: 2px ridge #3d3;
     border-radius: 100%;
 }
 
@@ -72,10 +73,10 @@ main{
 
     width: 80%;
     height: 80%;
-    background-color: #ffca00;
+    background-color: #00f;
     border-radius: 100%;
-    border: double #e8000036;
-    box-shadow: 0px 0px 0px 3px #ffca00;
+    border: double #ffd030;
+    box-shadow: 0px 0px 0px 3px #00f;
     animation-name: disco;
     animation-duration: 1s;
 }
@@ -85,7 +86,7 @@ main{
     height: 80%;
     background-color: #A42C1E;
     border-radius: 100%;
-    border: double #ffffff36;
+    border: double #ffd030;
     box-shadow: 0px 0px 0px 3px #a42c1e;
     animation-name: disco;
     animation-duration: 1s;
