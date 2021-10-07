@@ -110,7 +110,8 @@ const addDisco = (event) => {
            objCol.coluna5===6&&
            objCol.coluna6===6
         ){
-            console.log("Empate")
+            telaEmpate.style.display = 'block'
+            main.style.display = 'none'
         }
     }
     playerNaoEstaJogando = setInterval(() => {
