@@ -522,6 +522,14 @@ function INFERNO() {
     for(let i=0;i<cells.length;i++) {
         cells[i].classList.add("hell")
     }
+    quedaMoeda.src = "assets/musicas para o jogo/Risada do coring.mp3"
+    musicaDeFundo.src = "assets/musicas para o jogo/ERA   Amen.mp3"
+    comecoDaPartida.src = ""
+    musicaEmpate.src = "assets/musicas para o jogo/musica inferno.mp3"
+    musicaVitoriaSonic.src = "assets/musicas para o jogo/musica inferno.mp3"
+    musicaVitoriaMario.src = "assets/musicas para o jogo/Música Angelica.mp3"
+    vozMario.src = ""
+    vozSonic.src = "assets/musicas para o jogo/nicolau.mp3"
 }
 
 
