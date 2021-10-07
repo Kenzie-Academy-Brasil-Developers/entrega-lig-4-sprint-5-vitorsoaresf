@@ -5,7 +5,7 @@ main{
     flex-direction: column;
     justify-content: flex-end;
     height: 100vh;
-    background-image: url(../img/background.jpg);
+    background-image: url(../img/back2.jpeg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -69,16 +69,27 @@ main{
     border-radius: 100%;
 }
 
-.discoPlayer1{
+.linha_effect{
+    animation: pulse 3s linear infinite;
+}
 
+
+.linha_Sonic{
+    animation: pulseSonic 3s linear infinite;
+}
+
+.linha_Mario{
+    animation: pulseMario 3s linear infinite;
+}
+
+.discoPlayer1{
     width: 80%;
     height: 80%;
     background-color: #00f;
     border-radius: 100%;
     border: double #ffd030;
     box-shadow: 0px 0px 0px 3px #00f;
-    animation-name: disco;
-    animation-duration: 1s;
+    animation: disco 1s linear;
 }
 
 .discoPlayer2{
@@ -90,6 +101,7 @@ main{
     box-shadow: 0px 0px 0px 3px #a42c1e;
     animation-name: disco;
     animation-duration: 1s;
+    animation: disco 1s linear;
 }
 
 @keyframes disco {
@@ -101,7 +113,50 @@ main{
     to{
         width: 80%;
         box-shadow: 0 0 6px 6px rgb(255, 255, 255);
+        margin-top: 1px;
+    }
+}
+
+@keyframes pulse{
+    0%{
         margin-top: 0px;
+        box-shadow: 0 0 6px 6px rgba(255, 140, 9, 0.678);
+    }
+    50%{
+        box-shadow: 0 0 0px 0px rgb(180, 180, 180);
+    }
+    100%{
+        margin-top: 0px;
+        box-shadow: 0 0 6px 6px rgba(255, 140, 9, 0.678);
+    }
+}
+
+@keyframes pulseSonic{
+
+    0%{
+        margin-top: 0px;
+        box-shadow: 0 0 6px 6px rgba(6, 10, 233, 0.795);
+    }
+    50%{
+        box-shadow: 0 0 0px 0px rgb(180, 180, 180);
+    }
+    100%{
+        margin-top: 0px;
+        box-shadow: 0 0 6px 6px rgba(6, 10, 233, 0.795);
+    }
+}
+
+@keyframes pulseMario{
+    0%{
+        margin-top: 0px;
+        box-shadow: 0 0 6px 6px #a42c1e;
+    }
+    50%{
+        box-shadow: 0 0 0px 0px rgb(180, 180, 180);
+    }
+    100%{
+        margin-top: 0px;
+        box-shadow: 0 0 6px 6px #a42c1e;
     }
 }
 
@@ -189,7 +244,7 @@ main{
 .estilo_time1{
     width: 100vw;
     height: 10px;
-    background-color: #A42C1E;
+    background-color: #ff7b00;
     animation-name: time1;
     animation-duration: 15s;
 }
@@ -197,7 +252,7 @@ main{
 .estilo_time2{
     width: 100vw;
     height: 10px;
-    background-color: #289DE3;
+    background-color: #ff7b00;
     animation-name: time2;
     animation-duration: 15s;
 }

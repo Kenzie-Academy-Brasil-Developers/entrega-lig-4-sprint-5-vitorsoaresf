@@ -9,6 +9,7 @@ const box_time = document.createElement('div');
 const box_players = document.createElement('div');
 box_players.classList.add('box_players');
 
+const paiDiscosAdd = [];
 const botaoInicio = document.getElementById('botaoIniciar');
 const inicio = document.getElementById('paiInicio');
 const buttonSound = document.getElementById('buttonSound');
@@ -57,7 +58,7 @@ let desseleciona = false;
 const aplicacao = () => {
     musicaAbertura.play()
     musicaAbertura.loop = true
-    novoJogo();    
+    novoJogo();
 }
 
 const addDisco = (event) => {
@@ -87,6 +88,7 @@ const addDisco = (event) => {
                 objDiscos[`disco${idCol[6]}${objCol[idCol]}`] = "Player1"
                 moedaDoSonic.play()
             } else {
+                disco.closest('div').classList.add('linha_usadaMario')
                 disco.classList.add('discoPlayer2');
                 disco.id = 'discoPlayer2';
                 objDiscos[`disco${idCol[6]}${objCol[idCol]}`] = "Player2"
@@ -94,8 +96,13 @@ const addDisco = (event) => {
             }
 
             celula.appendChild(disco);
+
+
+            paiDiscosAdd.push(disco);
+            sincronizaAnimacoes();
+
             celula = col.children[col.children.length - objCol[idCol] - 1];
-            if (validaHorizontal(`disco${idCol[6]}${objCol[idCol]}`) || 
+            if (validaHorizontal(`disco${idCol[6]}${objCol[idCol]}`) ||
                 validaDiagonal(Number(idCol[6]), objCol[idCol]) ||
                 validaVertical(Number(idCol[6]), objCol[idCol])
             ) {
@@ -103,16 +110,16 @@ const addDisco = (event) => {
             }
             mudaPlayer();
         }
-        if(objCol.coluna0===6&&
-            objCol.coluna1===6&&
-            objCol.coluna2===6&&
-            objCol.coluna3===6&&
-            objCol.coluna4===6&&
-            objCol.coluna5===6&&
-            objCol.coluna6===6
-         ){
-             validaEmpate();
-         }
+        if (objCol.coluna0 === 6 &&
+            objCol.coluna1 === 6 &&
+            objCol.coluna2 === 6 &&
+            objCol.coluna3 === 6 &&
+            objCol.coluna4 === 6 &&
+            objCol.coluna5 === 6 &&
+            objCol.coluna6 === 6
+        ) {
+            validaEmpate();
+        }
     }
 
     playerNaoEstaJogando = setInterval(() => {
@@ -135,6 +142,7 @@ const criarColuna = (id, id1) => {
         const divLinha = document.createElement('div');
 
         divLinha.classList.add('linha');
+        divLinha.classList.add('linha_effect')
 
         divColuna.appendChild(divLinha);
 
@@ -145,17 +153,17 @@ const criarColuna = (id, id1) => {
 const desselecionaJogador = () => {
     const p1 = document.getElementById('p1');
     const p2 = document.getElementById('p2');
-    
-    if(box_time.childElementCount !== 0){
+
+    if (box_time.childElementCount !== 0) {
         box_time.removeChild(document.getElementById("time"));
     }
-    
+
     const divTime = document.createElement('div');
     divTime.id = 'time';
     divTime.style.position = 'absolute';
     box_time.appendChild(divTime);
-    
-    
+
+
     if (isPlayer1) {
         p1.classList.toggle('player_desselecionado');
         divTime.classList.add('estilo_time1');
@@ -171,18 +179,42 @@ const desselecionaJogador = () => {
     }
 }
 
-function soundToggle(){
+function soundToggle() {
     soundOn = !soundOn
-    if(soundOn){
-        buttonSound.innerHTML='<i class="fas fa-volume-up"></i>'
+    if (soundOn) {
+        buttonSound.innerHTML = '<i class="fas fa-volume-up"></i>'
         musicaDeFundo.play()
         moedaDoMario.volume = 1
         moedaDoSonic.volume = 1
-    }else{
-        buttonSound.innerHTML='<i class="fas fa-volume-mute"></i>'
+    } else {
+        buttonSound.innerHTML = '<i class="fas fa-volume-mute"></i>'
         musicaDeFundo.pause()
         moedaDoMario.volume = 0
         moedaDoSonic.volume = 0
+    }
+}
+
+const sincronizaAnimacoes = () => {
+    console.log(paiDiscosAdd)
+
+    for (let i = 0; i < paiDiscosAdd.length;i++){
+        if (paiDiscosAdd[i].id === 'discoPlayer1') {
+            paiDiscosAdd[i].closest('.linha').classList.remove('linha_effect');
+            paiDiscosAdd[i].closest('.linha').classList.remove('linha_Sonic');
+        }
+        else {
+            paiDiscosAdd[i].closest('.linha').classList.remove('linha_effect');
+            paiDiscosAdd[i].closest('.linha').classList.remove('linha_Mario');
+        }
+    }
+
+    for (let i = 0; i < paiDiscosAdd.length;i++){
+        if (paiDiscosAdd[i].id === 'discoPlayer1') {
+            paiDiscosAdd[i].closest('.linha').classList.add('linha_Sonic');
+        }
+        else {
+            paiDiscosAdd[i].closest('.linha').classList.add('linha_Mario');
+        }
     }
 }
 
@@ -295,7 +327,7 @@ const negaMovimento = () => {
     setTimeout(() => app.removeChild(divNaoInsere), 2000);
 }
 
-const novoJogo = () => {    
+const novoJogo = () => {
     box_tabuleiro.style.width = '100%';
     for (let i = 0; i <= 6; i++) {
         let l = []
@@ -307,12 +339,12 @@ const novoJogo = () => {
             l.push(newI + newJ)
         }
         criarColuna(i, l)
-    }    
+    }
     criaTime();
     criaFeedbackJogadorCorrente();
     musicaVitoriaMario.pause();
     musicaVitoriaSonic.pause();
-    musicaDerrota.pause();    
+    musicaDerrota.pause();
 }
 
 const permiteMovimento = () => {
@@ -394,16 +426,16 @@ const iniciar = () => {
         musicaDeFundo.play();
         musicaDeFundo.loop = true;
     }, 3000);
-    
+
     musicaAbertura.pause();
-    quedaMoeda.play();    
+    quedaMoeda.play();
 }
 
 function validaVitoria() {
     if (getPlayer() == 'Player1') {
         vitoriaSonic.style.display = 'block'
         main.style.display = 'none'
-        musicaDeFundo.pause(); 
+        musicaDeFundo.pause();
         musicaVitoriaSonic.play();
         musicaVitoriaSonic.loop = true;
         vozSonic.play();
@@ -414,10 +446,10 @@ function validaVitoria() {
         musicaDeFundo.pause();
         musicaVitoriaMario.play();
         musicaVitoriaMario.loop = true;
-        vozMario.play(); 
+        vozMario.play();
     }
 }
-function validaEmpate () {
+function validaEmpate() {
     telaEmpate.style.display = 'block'
     main.style.display = 'none'
     musicaDeFundo.pause();
@@ -432,7 +464,7 @@ function resetaSonic() {
     box_time.innerHTML = '';
     box_players.innerHTML = '';
     box_tabuleiro.innerHTML = '';
-    
+
     isPlayer1 = true
     objCol = {
         coluna0: 0,
@@ -450,7 +482,7 @@ function resetaSonic() {
     clearInterval();
     vitoriaSonic.style.display = 'none'
     main.style.display = 'flex';
-    
+
     novoJogo();
     musicaDeFundo.currentTime = 0;
     musicaDeFundo.play();
@@ -462,7 +494,7 @@ function resetaMario() {
     box_time.innerHTML = '';
     box_players.innerHTML = '';
     box_tabuleiro.innerHTML = '';
-    
+
     isPlayer1 = true
     objCol = {
         coluna0: 0,
@@ -480,8 +512,8 @@ function resetaMario() {
     clearInterval();
     vitoriaMario.style.display = 'none'
     main.style.display = 'flex';
-    
-    novoJogo();musicaDeFundo.currentTime = 0;
+
+    novoJogo(); musicaDeFundo.currentTime = 0;
     musicaDeFundo.play();
 }
 
@@ -491,7 +523,7 @@ function resetaEmpate() {
     box_time.innerHTML = '';
     box_players.innerHTML = '';
     box_tabuleiro.innerHTML = '';
-    
+
     isPlayer1 = true
     objCol = {
         coluna0: 0,
@@ -509,7 +541,7 @@ function resetaEmpate() {
     clearInterval();
     telaEmpate.style.display = 'none'
     main.style.display = 'flex';
-    
+
     novoJogo();
     musicaDeFundo.currentTime = 0;
     musicaDeFundo.play();
@@ -520,7 +552,7 @@ function resetaEmpate() {
 
 main.addEventListener('click', addDisco);
 botaoInicio.addEventListener('click', iniciar);
-buttonSound.addEventListener('click',soundToggle);
+buttonSound.addEventListener('click', soundToggle);
 resetSonic.addEventListener('click', resetaSonic);
 resetMario.addEventListener('click', resetaMario);
 resetEmpate.addEventListener('click', resetaEmpate);
