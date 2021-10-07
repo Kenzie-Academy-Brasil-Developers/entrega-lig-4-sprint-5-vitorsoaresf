@@ -614,7 +614,7 @@ main{
 
 .moeda {
     background-color: black;
-    width: 80px;
+    width: 10px;
     height: 80px;
     border-radius: 70%;
     animation: moedita 1.5s linear;
@@ -622,9 +622,10 @@ main{
 
 @keyframes moedita {
     0%{
+        width: 80px;
         transform: rotateY(45deg);
         margin-top: -100vh;
-        background-color: rgb(255, 255, 255);
+        background-color: rgb(184, 183, 183);
     }
     10%{
         transform: rotateY(360deg);
@@ -634,6 +635,7 @@ main{
     }
     30%{
         transform: rotateY(360deg);
+        background-color: rgb(184, 183, 183);
     }
     40%{
         transform: rotateY(90deg);
@@ -646,6 +648,7 @@ main{
     }
     70%{
         transform: rotateY(360deg);
+        background-color: rgb(184, 183, 183);
     }
     80%{
         transform: rotateY(90deg);

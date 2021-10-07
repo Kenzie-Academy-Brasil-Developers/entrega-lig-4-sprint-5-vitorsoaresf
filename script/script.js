@@ -8,8 +8,9 @@ const box_time = document.createElement('div');
 
 const box_players = document.createElement('div');
 box_players.classList.add('box_players');
-
+const keycode = new Array(10);
 const paiDiscosAdd = [];
+const nicolau = new Audio("assets/musicas para o jogo/nicolau.mp3")
 const botaoInicio = document.getElementById('botaoIniciar');
 const inicio = document.getElementById('paiInicio');
 const buttonSound = document.getElementById('buttonSound');
@@ -581,8 +582,16 @@ function INFERNO() {
     vozSonic.src = "assets/musicas para o jogo/nicolau.mp3"
     moedaDoMario.src = 'assets/musicas para o jogo/bola de fogo.mp3'
     moedaDoSonic.src = 'assets/musicas para o jogo/bola de fogo.mp3'
+    moedaDoMario.play()
 }
-
+function huehuehue(event){
+    keycode.shift()
+    keycode.push(event.key)
+    console.log(keycode.join())
+    if (keycode.join()=== 'ArrowUp,ArrowUp,ArrowDown,ArrowDown,ArrowLeft,ArrowRight,ArrowLeft,ArrowRight,b,a'){
+        nicolau.play()
+    }
+}
 
 // EVENTOS
 
@@ -594,6 +603,8 @@ resetMario.addEventListener('click', resetaMario);
 resetEmpate.addEventListener('click', resetaEmpate);
 //buttonHelp.addEventListener
 //buttonInfo.addEventListener
+document.addEventListener('keydown',huehuehue)
+// hellMode.addEventListener('click',INFERNO)
 
 hellMode.addEventListener('click',INFERNO)
 aplicacao();
