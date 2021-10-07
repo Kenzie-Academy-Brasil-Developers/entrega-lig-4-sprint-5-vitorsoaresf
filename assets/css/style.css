@@ -32,8 +32,8 @@ main{
 }
 
 .linha{
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     background-color: #03406C;
     border: 2px ridge #61b9ec;
     border-radius: 100%;
@@ -80,8 +80,8 @@ main{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    width: 50px;
-    height: 50px;
+    width: 80px;
+    height: 80px;
     position: absolute;
     top: 10px;
     left: 50%;
@@ -94,8 +94,8 @@ main{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    width: 50px;
-    height: 50px;
+    width: 80px;
+    height: 80px;
     position: absolute;
     top: 10px;
     left: 50%;
@@ -112,7 +112,7 @@ main{
         margin-top: 0px;
     }
     100%{
-        margin-top: -60px;
+        margin-top: -90px;
     }
 }
 
@@ -262,3 +262,69 @@ main{
 
 /* ADNRE */
 
+
+
+
+
+@media (min-width: 768px){
+    .linha{
+        width: 50px;
+        height: 50px;
+    }
+
+    .discoPlayer1{
+        width: 90%;
+        height: 90%;
+    }
+    
+    .discoPlayer2{
+        width: 90%;
+        height: 90%;
+    }
+}
+
+
+@media (min-width: 1024px){
+    .linha{
+        width: 60px;
+        height: 60px;
+    }
+
+    
+    .player1{
+        width: 146px;
+        height: 141px;
+    }
+    
+    .player2{
+        width: 134px;
+        height: 141px;
+    }
+}
+
+@media (min-width: 1440px){
+    .linha{
+        width: 70px;
+        height: 70px
+    }
+
+    .naoinsere{
+        width: 100px;
+        height: 100px;
+    }
+    .insere{
+        width: 100px;
+        height: 100px;
+    }
+
+
+    .player1{
+        width: 184px;
+        height: 178px;
+    }
+    
+    .player2{
+        width: 167px;
+        height: 174px;
+    }
+}

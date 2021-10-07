@@ -46,6 +46,7 @@ const addDisco = (event) => {
     const idCol = col.id;
     if (objCol[idCol] === 6) {
         negaMovimento();
+        mudaPlayer();
     } else {
         permiteMovimento();
         let celula = col.children[col.children.length - objCol[idCol] - 1];
