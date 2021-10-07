@@ -18,26 +18,26 @@ main{
 }
 #buttonBar>div{
     margin: 3px;
-    border: red solid 4px;
     font-size: 25px;
     border-radius: 50%;
-    color: red;
-    background-color: #289DE3;
-    text-align: center;
-    padding-left: 0.25em;
-    padding-right: 0.25em;
-    padding-top: 0.5em;
-    height: 1.5em;
-    width: 1.5em;
-    display: inline-block;
+    color: #1d00ff7a;
+    background-color: #e3dd28;
+    padding: 0.5em;
+    height: 0.3em;
+    width: 0.3em;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 #buttonBar>div:hover{
     background-color: #135074 ;
     color: #a00;
     border-color: #a00;
 }
-
+.fas{
+    font-size: 18px;
+}
 .box_tabuleiro{
     display: flex;
     width: 100%;
@@ -181,7 +181,8 @@ main{
 .box_time{
     width: 100vw;
     height: 10px;
-    background-color: #289DE3;
+    background-color: green;
+    /* ffca00 */
 }
 
 .estilo_time1{
@@ -195,7 +196,7 @@ main{
 .estilo_time2{
     width: 100vw;
     height: 10px;
-    background-color: #ffca00;
+    background-color: #289DE3;
     animation-name: time2;
     animation-duration: 15s;
 }
