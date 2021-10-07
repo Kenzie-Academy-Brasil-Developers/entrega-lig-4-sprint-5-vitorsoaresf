@@ -4,6 +4,8 @@ const main = document.getElementById('app');
 const box_tabuleiro = document.createElement('div');
 box_tabuleiro.classList.add('box_tabuleiro');
 main.appendChild(box_tabuleiro);
+const box_time = document.createElement('div');
+
 const botaoInicio = document.getElementById('botaoIniciar');
 const inicio = document.getElementById('paiInicio');
 const buttonSound = document.getElementById('buttonSound')
@@ -43,12 +45,13 @@ const addDisco = (event) => {
     if (col === null || col === undefined) {
         return
     }
-        
+
     desselecionaJogador();
 
     const idCol = col.id;
     if (objCol[idCol] === 6) {
         negaMovimento();
+        mudaPlayer();
     } else {
         permiteMovimento();
         let celula = col.children[col.children.length - objCol[idCol] - 1];
@@ -74,10 +77,10 @@ const addDisco = (event) => {
         }
     }
 
-    playerNaoEstaJogando = setInterval(() =>{
+    playerNaoEstaJogando = setInterval(() => {
         desselecionaJogador();
         mudaPlayer();
-    }, 3000);
+    }, 15000);
 
 }
 
@@ -101,19 +104,31 @@ const criarColuna = (id, id1) => {
     }
 }
 
-const desselecionaJogador = () =>{
+const desselecionaJogador = () => {
     const p1 = document.getElementById('p1');
     const p2 = document.getElementById('p2');
-
-    if(isPlayer1){
+    
+    if(box_time.childElementCount !== 0){
+        box_time.removeChild(document.getElementById("time"));
+    }
+    
+    const divTime = document.createElement('div');
+    divTime.id = 'time';
+    divTime.style.position = 'absolute';
+    box_time.appendChild(divTime);
+    
+    
+    if (isPlayer1) {
         p1.classList.toggle('player_desselecionado');
-        if(desseleciona){
+        divTime.classList.add('estilo_time1');
+        if (desseleciona) {
             p2.classList.toggle('player_desselecionado');
             bool = false
         }
-    }else{
+    } else {
         p2.classList.toggle('player_desselecionado');
         p1.classList.toggle('player_desselecionado');
+        divTime.classList.add('estilo_time2');
         desseleciona = true;
     }
 }
@@ -222,6 +237,11 @@ const criaFeedbackJogadorCorrente = () => {
     main.insertBefore(box_players, main.firstChild);
 }
 
+const criaTime = () => {
+    box_time.classList.add('box_time');
+    main.insertBefore(box_time, main.firstChild);
+}
+
 const mudaPlayer = () => {
     isPlayer1 = !isPlayer1
 }
@@ -234,7 +254,7 @@ const negaMovimento = () => {
 }
 
 const novoJogo = () => {
-    
+
     box_tabuleiro.style.width = '100%';
     for (let i = 0; i <= 6; i++) {
         let l = []
@@ -247,6 +267,7 @@ const novoJogo = () => {
         }
         criarColuna(i, l)
     }
+    criaTime();
     criaFeedbackJogadorCorrente();
 }
 
@@ -303,7 +324,7 @@ const validaHorizontal = (posicao) => {
 const validaVertical = (x, y) => {
     if (objDiscos[`disco${x}${y}`] === getPlayer() && objDiscos[`disco${x}${y - 1}`] === getPlayer() &&
         objDiscos[`disco${x}${y - 2}`] === getPlayer() && objDiscos[`disco${x}${y - 3}`] === getPlayer()) {
-            console.log('ganhou')
+        console.log('ganhou')
         return true
     }
     return false
@@ -322,9 +343,9 @@ const validaDiagonal = (x, y) => {
 }
 
 const iniciar = () => {
-    setTimeout(function(){ 
-    inicio.style.display = 'none';
-    main.style.display = 'flex' 
+    setTimeout(function () {
+        inicio.style.display = 'none';
+        main.style.display = 'flex'
     }, 3000);
 }
 

@@ -1,3 +1,5 @@
+/* VITOR */
+
 main{
     display: none;
     flex-direction: column;
@@ -53,12 +55,14 @@ main{
 }
 
 .coluna:hover{
-    background-color: #2fa1e2;
+    background-color: #57a7d6;
 }
 
 .linha{
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
     background-color: #03406C;
     border: 2px ridge #61b9ec;
     border-radius: 100%;
@@ -105,8 +109,8 @@ main{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    width: 50px;
-    height: 50px;
+    width: 80px;
+    height: 80px;
     position: absolute;
     top: 10px;
     left: 50%;
@@ -119,8 +123,8 @@ main{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    width: 50px;
-    height: 50px;
+    width: 80px;
+    height: 80px;
     position: absolute;
     top: 10px;
     left: 50%;
@@ -137,7 +141,7 @@ main{
         margin-top: 0px;
     }
     100%{
-        margin-top: -60px;
+        margin-top: -90px;
     }
 }
 
@@ -172,7 +176,50 @@ main{
     filter: grayscale(1);
 }
 
+/* TEMPO PARA A JOGADA DO PLAYER */
+
+.box_time{
+    width: 100vw;
+    height: 10px;
+    background-color: #289DE3;
+}
+
+.estilo_time1{
+    width: 100vw;
+    height: 10px;
+    background-color: #A42C1E;
+    animation-name: time1;
+    animation-duration: 15s;
+}
+
+.estilo_time2{
+    width: 100vw;
+    height: 10px;
+    background-color: #ffca00;
+    animation-name: time2;
+    animation-duration: 15s;
+}
+
+@keyframes time1 {
+    0%{
+        margin-left: -100vw;
+    }
+    100%{
+        margin-left: 0vw;
+    }
+}
+
+@keyframes time2 {
+    0%{
+        margin-left: -100vw;
+    }
+    100%{
+        margin-left: 0vw;
+    }
+}
+
 /* DANIEL */
+
 .paiInicio {
     background-image: url(../img/backinicio.jpg);
     background-size: 100%;
@@ -236,6 +283,8 @@ main{
     height: 130px;
     background-color: rgba(172, 171, 171, 0.685);
 }
+
+
 /* ERIVAN */
 
 
@@ -244,4 +293,75 @@ main{
 
 
 
-/* VITOR */
+
+
+@media (min-width: 768px){
+    .linha{
+        width: 40px;
+        height: 40px;
+    }
+
+    .discoPlayer1{
+        width: 80%;
+        height: 80%;
+    }
+    
+    .discoPlayer2{
+        width: 80%;
+        height: 80%;
+    }
+}
+
+
+@media (min-width: 1024px){
+    
+    .linha{
+        width: 50px;
+        height: 50px;
+    }
+    .player1{
+        width: 146px;
+        height: 141px;
+    }
+    
+    .player2{
+        width: 134px;
+        height: 141px;
+    }
+}
+
+@media (min-width: 1440px){
+    .linha{
+        width: 60px;
+        height: 60px;
+    }
+    .discoPlayer1{
+        width: 90%;
+        height: 90%;
+    }
+    
+    .discoPlayer2{
+        width: 90%;
+        height: 90%;
+    }
+
+    .naoinsere{
+        width: 100px;
+        height: 100px;
+    }
+    .insere{
+        width: 100px;
+        height: 100px;
+    }
+
+
+    .player1{
+        width: 184px;
+        height: 178px;
+    }
+    
+    .player2{
+        width: 167px;
+        height: 174px;
+    }
+}
