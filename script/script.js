@@ -559,3 +559,53 @@ resetEmpate.addEventListener('click', resetaEmpate);
 //buttonHelp.addEventListener
 //buttonInfo.addEventListener
 aplicacao();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const info = document.getElementById('info');
+const voltarInfo = document.getElementById('voltarInfo');
+const irInfo = document.getElementById('buttonInfo');
+const irRegras = document.getElementById('buttonHelp');
+const regras = document.getElementById('regras');
+const voltarRegras = document.getElementById('botaoRegras');
+
+voltarInfo.addEventListener('click', voltarDaInfo);
+irInfo.addEventListener('click', irParaInfo);
+irRegras.addEventListener('click', irParaRegras);
+voltarRegras.addEventListener('click', voltarDasRegras);
+
+function voltarDaInfo () {
+    main.style.display = 'flex';
+    info.style.display = 'none';
+}
+
+function irParaInfo () {
+    main.style.display = 'none';
+    info.style.display = 'flex';
+}
+
+function irParaRegras () {
+    main.style.display = 'none';
+    regras.style.display = 'block';
+}
+
+function voltarDasRegras () {
+    main.style.display = 'flex';
+    regras.style.display = 'none'
+}
