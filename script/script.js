@@ -12,8 +12,6 @@ box_players.classList.add('box_players');
 const botaoInicio = document.getElementById('botaoIniciar');
 const inicio = document.getElementById('paiInicio');
 const buttonSound = document.getElementById('buttonSound');
-const buttonHelp = document.getElementById('buttonHelp');
-const buttonInfo = document.getElementById('buttonInfo');
 const vitoriaSonic = document.getElementById('sonicGanha');
 const vitoriaMario = document.getElementById('marioGanha');
 const musicaAbertura = document.getElementById('musicaAberturaDeJogo');
@@ -530,6 +528,8 @@ function INFERNO() {
     musicaVitoriaMario.src = "assets/musicas para o jogo/Música Angelica.mp3"
     vozMario.src = ""
     vozSonic.src = "assets/musicas para o jogo/nicolau.mp3"
+    boxTime = document.getElementsByClassName("box_time")[0]
+    boxTime.classList.add("hell")
 }
 
 
@@ -541,10 +541,8 @@ buttonSound.addEventListener('click',soundToggle);
 resetSonic.addEventListener('click', resetaSonic);
 resetMario.addEventListener('click', resetaMario);
 resetEmpate.addEventListener('click', resetaEmpate);
-//buttonHelp.addEventListener
-//buttonInfo.addEventListener
-
 hellMode.addEventListener('click',INFERNO)
+
 aplicacao();
 
 const info = document.getElementById('info');

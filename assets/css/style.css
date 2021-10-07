@@ -645,8 +645,19 @@ main.hell{
     background-color: transparent;
     border-color: #251200;
 }
+.linha.hell>.estilo_time1#time{
+    background-color: black;
+}
 
-
+.box_time.hell{
+    background-color: transparent;
+}
+.box_time.hell>.estilo_time1#time{
+    background-color: black;
+}
+.box_time.hell>.estilo_time2#time{
+    background-color: red;
+}
 
 @media (min-width: 768px){
     .linha{
