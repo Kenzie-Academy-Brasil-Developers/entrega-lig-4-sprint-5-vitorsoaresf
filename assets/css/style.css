@@ -243,7 +243,6 @@ main{
     width: 100vw;
     height: 10px;
     background-color: green;
-    /* ffca00 */
 }
 
 .estilo_time1{
@@ -289,6 +288,7 @@ main{
     height: 100vh; 
     display: block;
 }
+
 .filhoInicio {
     background-color:rgba(0, 0, 0, 0.6);
     height: 100vh;
@@ -298,6 +298,7 @@ main{
     align-items: center;
     justify-content: center;
 }
+
 .meiuca {
     background-color:transparent;
     height: 100vh;
@@ -306,6 +307,7 @@ main{
     flex-direction: column;
     align-items: center;
 }
+
 .filhoInicio h1 {
     margin-top: 20px;
     font-size: 35px;
@@ -314,6 +316,7 @@ main{
     font-family: 'Press Start 2P', cursive;
     color: white;
 }
+
 .filhoInicio p {
     font-family: 'Press Start 2P', cursive;
     color: white;
@@ -323,11 +326,12 @@ main{
     text-align: center;
     padding: 10px;
     border: 2px dotted white;
-    border-radius: 20px;
-    margin: 50px 0 80px 0;
+    border-radius: 10px;
+    margin: 10px;
     max-width: 460px;
     line-height: 1.2;
 }
+
 .filhoInicio button {
     background-color: rgba(218, 21, 21, 0.788);
     color: #fff;
@@ -335,8 +339,17 @@ main{
     width: 100px;
     font-size: 12px;
     border-radius: 100%;
+    border: ridge 10px red;
+    border-right-style: groove;
+    border-bottom-style: groove;
     font-family: 'Press Start 2P', cursive;
 }
+
+.filhoInicio button:hover{
+    height: 120px;
+    width: 120px;
+}
+
 .filhoInicio .div1 {
     background-color: gray;
     border: 3px inset;
@@ -346,25 +359,30 @@ main{
     justify-content: center;
     align-items: center;
 }
+
 .filhoInicio .div2 {
     background-color: black;
     width: 10px;
     height: 80px;
 }
+
 .filhoInicio .insertCoin {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    border-radius: 10px;
     width: 280px;
     height: 130px;
     background-color: rgba(172, 171, 171, 0.685);
 }
+
 .paiSonic {
     background-image: url(../img/greenzone.png);
     height: 100vh;
     background-size: 205vh;
     display: none;
 }
+
 .filhoSonic {
     background-color:rgba(0, 0, 0, 0.4);
     height: 100vh;
@@ -374,6 +392,7 @@ main{
     align-items: center;
     justify-content: center;
 }
+
 .meioSonic {
     height: 100vh;
     width: 100vw;
@@ -381,6 +400,7 @@ main{
     flex-direction: column;
     align-items: center;
 }
+
 .filhoSonic p {
     font-family: 'Press Start 2P', cursive;
     color: white;
@@ -394,20 +414,24 @@ main{
     margin: 0px 0 80px 0;
     max-width: 400px;
 }
+
 .filhoSonic img {
     height: 300px;
     position: absolute;
     bottom: 0;
 }
+
 .sonicCorredor {
     height: 60px;
     width: 60px;
     display: flex;
 }
+
 .sonicCorredor img {
     height: 50px;
     position: initial;
 }
+
 .filhoSonic h2 {
     margin-top: 20px;
     font-size: 35px;
@@ -416,6 +440,7 @@ main{
     font-family: 'Press Start 2P', cursive;
     color: white;
 }
+
 .filhoSonic button {
     position: absolute;
     bottom: 40px;
@@ -427,6 +452,7 @@ main{
     font-size: 12px;
     border-radius: 20px;
 }
+
 .paiMario {
     background-image: url(../img/mariofundo.png);
     height: 100vh;
@@ -434,6 +460,7 @@ main{
     display: none;
     background-position: center;
 }
+
 .filhoMario {
     background-color:rgba(0, 0, 0, 0.4);
     height: 100vh;
@@ -443,6 +470,7 @@ main{
     align-items: center;
     justify-content: center;
 }
+
 .meioMario {
     height: 100vh;
     width: 100vw;
@@ -450,6 +478,7 @@ main{
     flex-direction: column;
     align-items: center;
 }
+
 .filhoMario p {
     font-family: 'Press Start 2P', cursive;
     color: white;
@@ -463,21 +492,25 @@ main{
     margin: 0px 0 80px 0;
     max-width: 400px;
 }
+
 .filhoMario img {
     height: 300px;
     position: absolute;
     bottom: 0;
 }
+
 .marioCorredor {
     height: 60px;
     width: 60px;
     display: flex;
 }
+
 .marioCorredor img {
     height: 50px;
     width: 50px;
     position: initial;
 }
+
 .filhoMario h2 {
     margin-top: 10px;
     font-size: 35px;
@@ -486,6 +519,7 @@ main{
     font-family: 'Press Start 2P', cursive;
     color: white;
 }
+
 .filhoMario button {
     position: absolute;
     bottom: 40px;
@@ -497,12 +531,14 @@ main{
     font-size: 12px;
     border-radius: 20px;
 }
+
 .regras {
     background-image: url(../img/rules.jpg);
     height: 100vh;
     background-size: 112vw;
     display: none;
 }
+
 .filhoRegras {
     background-color:rgba(0, 0, 0, 0.5);
     height: 100vh;
@@ -511,6 +547,7 @@ main{
     flex-direction: column;
     align-items: center;
 }
+
 .filhoRegras h2 {
     text-align: center;
     color: white;
@@ -519,6 +556,7 @@ main{
     margin-top: 30px;
     margin-bottom: 30px;
 }
+
 .filhoRegras p {
     text-align: center;
     font-family: 'Press Start 2P', cursive;
@@ -527,6 +565,7 @@ main{
     padding: 10px;
     line-height: 1.5;
 }
+
 .netoRegras {
     border: 2px dotted white;
     border-radius: 20px;
@@ -534,6 +573,7 @@ main{
     width: 90%;
     max-width: 500px;
 }
+
 .botaoRegras {
     background-color: rgba(0, 0, 0, 0.8);
     color: white;
@@ -543,6 +583,7 @@ main{
     margin-top: 6%;
     border-radius: 20px;
 }
+
 .empate {
     background-image: url(../img/empatee.jpg);
     height: 100vh;
@@ -550,6 +591,7 @@ main{
     display: none;
     background-position: center;
 }
+
 .filhoEmpate {
     background-color:rgba(0, 0, 0, 0.4);
     height: 100vh;
@@ -559,6 +601,7 @@ main{
     align-items: center;
     justify-content: center;
 }
+
 .meioEmpate {
     height: 100vh;
     width: 100vw;
@@ -566,6 +609,7 @@ main{
     flex-direction: column;
     align-items: center;
 }
+
 .filhoEmpate p {
     font-family: 'Press Start 2P', cursive;
     color: white;
@@ -579,21 +623,25 @@ main{
     margin: 0px 0 20px 0;
     max-width: 400px;
 }
+
 .filhoEmpate img {
     height: 200px;
     position: initial;
     bottom: 0;
 }
+
 .marioCorredor {
     height: 60px;
     width: 60px;
     display: flex;
 }
+
 .corredor img {
     height: 50px;
     width: 50px;
     position: initial;
 }
+
 .filhoEmpate h2 {
     margin-top: 10px;
     font-size: 35px;
@@ -602,6 +650,7 @@ main{
     font-family: 'Press Start 2P', cursive;
     color: white;
 }
+
 .filhoEmpate button {
     position: absolute;
     bottom: 40px;
@@ -675,6 +724,7 @@ main{
     display: none;
     background-position: center;
 }
+
 .filhoInfo {
     background-color:rgba(0, 0, 0, 0.4);
     height: 100vh;
@@ -684,6 +734,7 @@ main{
     align-items: center;
     justify-content: center;
 }
+
 .meioInfo {
     height: 100vh;
     width: 100vw;
@@ -692,6 +743,7 @@ main{
     align-items: center;
     max-width: 540px;
 }
+
 .filhoInfo a {
     font-family: 'Press Start 2P', cursive;
     color: white;
@@ -706,9 +758,11 @@ main{
     max-width: 400px;
     text-decoration: none 
 }
+
 .meioInfo img {
     width: 100px;
 }
+
 .filhoInfo h2 {
     margin-top: 20px;
     font-size: 25px;
@@ -749,14 +803,17 @@ main{
 main.hell{
     background-image: url(../img/hellmodewp.jpg);
 }
+
 .box_tabuleiro.hell{
     background-image: none;
     background-size: cover;
 }
+
 .linha.hell{
     background-color: transparent;
     border-color: #251200;
 }
+
 .linha.hell>.estilo_time1#time{
     background-color: black;
 }
@@ -764,9 +821,11 @@ main.hell{
 .box_time.hell{
     background-color: transparent;
 }
+
 .box_time.hell>.estilo_time1#time{
     background-color: black;
 }
+
 .box_time.hell>.estilo_time2#time{
     background-color: red;
 }
