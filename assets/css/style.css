@@ -326,6 +326,7 @@ main{
     border-radius: 20px;
     margin: 50px 0 80px 0;
     max-width: 460px;
+    line-height: 1.2;
 }
 .filhoInicio button {
     background-color: rgba(218, 21, 21, 0.788);
@@ -524,13 +525,14 @@ main{
     color: white;
     font-size: 12px;
     padding: 10px;
+    line-height: 1.5;
 }
 .netoRegras {
     border: 2px dotted white;
     border-radius: 20px;
     background-color: rgba(0, 0, 0, 0.5);
     width: 90%;
-    max-width: 656px;
+    max-width: 500px;
 }
 .botaoRegras {
     background-color: rgba(0, 0, 0, 0.8);
@@ -816,6 +818,7 @@ main.hell{
     }
     .filhoSonic p {
         margin: 0;
+        margin-bottom: 30px;
     }
     .filhoSonic button {
         bottom: 90px;
